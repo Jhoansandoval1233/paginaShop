@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOUDKINGZ — THC Vape Premium Colombia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- AGE GATE -->
+    <div class="age-gate" id="ageGate">
+        <div class="age-gate__bg"></div>
+        <div class="age-gate__content">
+            <div class="age-gate__logo">☁ CLOUDKINGZ</div>
+            <div class="age-gate__sub">THC VAPE PREMIUM · COLOMBIA</div>
+            <h2 class="age-gate__title">¿Eres mayor<br>de 18 años?</h2>
+            <p class="age-gate__text">Este sitio contiene productos de THC para adultos mayores de edad.</p>
+            <div class="age-gate__btns">
+                <button class="btn-age-yes" onclick="enterSite()">Sí, tengo +18</button>
+                <button class="btn-age-no" onclick="window.location='https://google.com'">No, salir</button>
+            </div>
+            <p class="age-gate__disclaimer">Al ingresar confirmas que eres mayor de edad y que el consumo de THC es
+                legal en tu región.</p>
+        </div>
+    </div>
+
+    <!-- CURSOR -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <a href="#" class="nav__logo">CLOUD<span>KINGZ</span></a>
+        <ul class="nav__links">
+            <li><a href="#categorias">Categorías</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+        <div class="nav__right">
+            <a href="https://wa.me/573158170584" target="_blank" class="nav__whatsapp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                WhatsApp
+            </a>
+            <button class="btn-nav-cta">Pedir Ahora</button>
+        </div>
+        <button class="nav__hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#categorias" onclick="closeMobileMenu()">Categorías</a></li>
+            <li><a href="#productos" onclick="closeMobileMenu()">Productos</a></li>
+            <li><a href="#nosotros" onclick="closeMobileMenu()">Nosotros</a></li>
+            <li><a href="#reviews" onclick="closeMobileMenu()">Reviews</a></li>
+            <li><a href="https://wa.me/573158170584" target="_blank">WhatsApp →</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero__bg"></div>
+        <div class="hero__grid-lines"></div>
+
+        <!-- Imagen hero principal -->
+        <div class="hero__visual">
+            <div class="hero__img-wrap">
+                <img src="img/cartuchos.jpeg" alt="Cartuchos THC Premium" class="hero__img" id="heroImg">
+                <!-- Si tienes más imágenes hero, agrégalas aquí -->
+                <!-- <img src="img/hero-2.jpg" alt="..." class="hero__img hero__img--2"> -->
+            </div>
+            <div class="hero__img-glow"></div>
+        </div>
+
+        <div class="hero__content">
+            <span class="hero__tag">✦ Vape THC Premium — Envío discreto · Colombia</span>
+            <h1 class="hero__title">
+                ELEVA<br>
+                <span class="accent">TU</span><br>
+                <span class="gold">NIVEL</span>
+            </h1>
+            <p class="hero__sub">Los cartuchos, baterías y vapes de THC de mayor calidad. Extracción premium, sabores
+                únicos, discreción total.</p>
+            <div class="hero__btns">
+                <a href="#productos" class="btn-primary">Ver Catálogo</a>
+                <a href="https://wa.me/573158170584" target="_blank" class="btn-secondary">Ordenar por WA</a>
+            </div>
+        </div>
+
+        <div class="hero__scroll">
+            <div class="hero__scroll-line"></div>
+            <span>scroll</span>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="stat-item reveal">
+            <div class="stat-number">500<span>+</span></div>
+            <div class="stat-label">Clientes activos</div>
+        </div>
+        <div class="stat-item reveal">
+            <div class="stat-number">99<span>%</span></div>
+            <div class="stat-label">THC puro</div>
+        </div>
+        <div class="stat-item reveal">
+            <div class="stat-number">24<span>H</span></div>
+            <div class="stat-label">Envío express</div>
+        </div>
+        <div class="stat-item reveal">
+            <div class="stat-number">30<span>+</span></div>
+            <div class="stat-label">Cepas disponibles</div>
+        </div>
+    </div>
+
+    <!-- MARQUEE -->
+    <div class="marquee-bar">
+        <div class="marquee-track">
+            <span class="marquee-item">CARTUCHOS THC <i></i> BATERÍAS PREMIUM</span>
+            <span class="marquee-item">LIVE RESIN <i></i> DISTILADO PURO</span>
+            <span class="marquee-item">ENVÍO DISCRETO <i></i> CALIDAD GARANTIZADA</span>
+            <span class="marquee-item">COLOMBIA <i></i> SABOR REAL</span>
+            <span class="marquee-item">CARTUCHOS THC <i></i> BATERÍAS PREMIUM</span>
+            <span class="marquee-item">LIVE RESIN <i></i> DISTILADO PURO</span>
+            <span class="marquee-item">ENVÍO DISCRETO <i></i> CALIDAD GARANTIZADA</span>
+            <span class="marquee-item">COLOMBIA <i></i> SABOR REAL</span>
+        </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section class="categories" id="categorias">
+        <div class="section-header reveal">
+            <span class="section-label">// 01 — Línea completa</span>
+            <h2 class="section-title">CATEGORÍAS</h2>
+        </div>
+        <div class="categories__grid">
+
+            <div class="cat-card reveal">
+                <!-- Agrega imagen: <img src="img/categoria-cartuchos.jpg" alt="Cartuchos"> -->
+                <div class="cat-card__img-wrap">
+                    <div class="cat-card__icon">🛢️</div>
+                    <!-- Descomenta cuando tengas imagen:
+                    <img src="img/categoria-cartuchos.jpg" alt="Cartuchos THC" class="cat-card__img"> -->
+                </div>
+                <div class="cat-card__body">
+                    <div class="cat-card__name">Cartuchos</div>
+                    <div class="cat-card__desc">0.5g y 1g. Distilado, Live Resin, Live Rosin y Full Spectrum.</div>
+                    <div class="cat-card__arrow">Explorar <span>→</span></div>
+                </div>
+            </div>
+
+            <div class="cat-card reveal">
+                <div class="cat-card__img-wrap">
+                    <div class="cat-card__icon">🔋</div>
+                </div>
+                <div class="cat-card__body">
+                    <div class="cat-card__name">Baterías</div>
+                    <div class="cat-card__desc">Voltaje variable, preheat y diseños discretos para uso diario.</div>
+                    <div class="cat-card__arrow">Explorar <span>→</span></div>
+                </div>
+            </div>
+
+            <div class="cat-card reveal">
+                <div class="cat-card__img-wrap">
+                    <div class="cat-card__icon">💨</div>
+                </div>
+                <div class="cat-card__body">
+                    <div class="cat-card__name">Desechables</div>
+                    <div class="cat-card__desc">All-in-one de 1g y 2g. Sin carga. Listos para usar.</div>
+                    <div class="cat-card__arrow">Explorar <span>→</span></div>
+                </div>
+            </div>
+
+            <div class="cat-card reveal">
+                <div class="cat-card__img-wrap">
+                    <div class="cat-card__icon">🌿</div>
+                </div>
+                <div class="cat-card__body">
+                    <div class="cat-card__name">Pods</div>
+                    <div class="cat-card__desc">Sistema cerrado con la mejor experiencia de sabor y discreción.</div>
+                    <div class="cat-card__arrow">Explorar <span>→</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="productos">
+        <div class="products__header reveal">
+            <span class="section-label">// 02 — Más vendidos</span>
+            <h2 class="section-title">PRODUCTOS<br>DESTACADOS</h2>
+        </div>
+        <div class="products__grid">
+
+            <div class="prod-card reveal">
+                <div class="prod-card__img-wrap">
+                    <!-- Imagen del producto -->
+                    <img src="img/cartuchos.jpeg" alt="OG Kush Cartucho 1G" class="prod-card__img">
+                    <!-- Fallback emoji si no hay imagen -->
+                    <div class="prod-card__icon-fallback">🛢️</div>
+                    <span class="badge badge--hot">🔥 HOT</span>
+                </div>
+                <div class="prod-card__body">
+                    <div class="prod-card__brand">Distilado Premium</div>
+                    <div class="prod-card__name">OG KUSH CARTUCHO 1G</div>
+                    <div class="prod-card__tags">
+                        <span>THC 91%</span>
+                        <span>Indica</span>
+                        <span>Pino · Tierra</span>
+                    </div>
+                    <div class="prod-card__footer">
+                        <div class="prod-card__price">
+                            $45.000
+                            <small>COP / unidad</small>
+                        </div>
+                        <a href="https://wa.me/573158170584?text=Hola, quiero el OG Kush 1G" target="_blank"
+                            class="btn-pedir">Pedir</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prod-card reveal">
+                <div class="prod-card__img-wrap">
+                    <!-- <img src="img/blue-dream.jpg" alt="Blue Dream Live Resin" class="prod-card__img"> -->
+                    <div class="prod-card__icon-fallback">💎</div>
+                    <span class="badge badge--new">✦ NUEVO</span>
+                </div>
+                <div class="prod-card__body">
+                    <div class="prod-card__brand">Live Resin</div>
+                    <div class="prod-card__name">BLUE DREAM LIVE RESIN</div>
+                    <div class="prod-card__tags">
+                        <span>THC 86%</span>
+                        <span>Híbrido</span>
+                        <span>Berries</span>
+                    </div>
+                    <div class="prod-card__footer">
+                        <div class="prod-card__price">
+                            $65.000
+                            <small>COP / unidad</small>
+                        </div>
+                        <a href="https://wa.me/573158170584?text=Hola, quiero el Blue Dream Live Resin" target="_blank"
+                            class="btn-pedir">Pedir</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prod-card reveal">
+                <div class="prod-card__img-wrap">
+                    <!-- <img src="img/bateria-stealth.jpg" alt="Batería Stealth Pro" class="prod-card__img"> -->
+                    <div class="prod-card__icon-fallback">🔋</div>
+                    <span class="badge badge--limited">⚡ LIMITADO</span>
+                </div>
+                <div class="prod-card__body">
+                    <div class="prod-card__brand">Hardware</div>
+                    <div class="prod-card__name">BATERÍA STEALTH PRO</div>
+                    <div class="prod-card__tags">
+                        <span>2.4V–4.0V</span>
+                        <span>USB-C</span>
+                        <span>500mAh</span>
+                    </div>
+                    <div class="prod-card__footer">
+                        <div class="prod-card__price">
+                            $35.000
+                            <small>COP / unidad</small>
+                        </div>
+                        <a href="https://wa.me/573158170584?text=Hola, quiero la Batería Stealth Pro" target="_blank"
+                            class="btn-pedir">Pedir</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prod-card reveal">
+                <div class="prod-card__img-wrap">
+                    <!-- <img src="img/sour-diesel.jpg" alt="Sour Diesel Disposable" class="prod-card__img"> -->
+                    <div class="prod-card__icon-fallback">💨</div>
+                </div>
+                <div class="prod-card__body">
+                    <div class="prod-card__brand">Desechable 2G</div>
+                    <div class="prod-card__name">SOUR DIESEL DISPOSABLE</div>
+                    <div class="prod-card__tags">
+                        <span>THC 88%</span>
+                        <span>Sativa</span>
+                        <span>Diésel · Cítrico</span>
+                    </div>
+                    <div class="prod-card__footer">
+                        <div class="prod-card__price">
+                            $75.000
+                            <small>COP / unidad</small>
+                        </div>
+                        <a href="https://wa.me/573158170584?text=Hola, quiero el Sour Diesel Disposable" target="_blank"
+                            class="btn-pedir">Pedir</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prod-card reveal">
+                <div class="prod-card__img-wrap">
+                    <!-- <img src="img/gelato.jpg" alt="Gelato 41 Full Spectrum" class="prod-card__img"> -->
+                    <div class="prod-card__icon-fallback">🌿</div>
+                    <span class="badge badge--new">✦ NUEVO</span>
+                </div>
+                <div class="prod-card__body">
+                    <div class="prod-card__brand">Full Spectrum</div>
+                    <div class="prod-card__name">GELATO 41 FULL SPECTRUM</div>
+                    <div class="prod-card__tags">
+                        <span>THC 84%</span>
+                        <span>Indica</span>
+                        <span>CBN + CBG</span>
+                    </div>
+                    <div class="prod-card__footer">
+                        <div class="prod-card__price">
+                            $60.000
+                            <small>COP / unidad</small>
+                        </div>
+                        <a href="https://wa.me/573000000000?text=Hola, quiero el Gelato 41 Full Spectrum"
+                            target="_blank" class="btn-pedir">Pedir</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prod-card reveal">
+                <div class="prod-card__img-wrap">
+                    <!-- <img src="img/starter-kit.jpg" alt="Starter Kit Premium" class="prod-card__img"> -->
+                    <div class="prod-card__icon-fallback">✨</div>
+                    <span class="badge badge--limited">⚡ COMBO</span>
+                </div>
+                <div class="prod-card__body">
+                    <div class="prod-card__brand">Kit Starter</div>
+                    <div class="prod-card__name">STARTER KIT PREMIUM</div>
+                    <div class="prod-card__tags">
+                        <span>Batería</span>
+                        <span>2 Cartuchos</span>
+                        <span>Estuche</span>
+                    </div>
+                    <div class="prod-card__footer">
+                        <div class="prod-card__price">
+                            $110.000
+                            <small>COP / kit</small>
+                        </div>
+                        <a href="https://wa.me/573158170584?text=Hola, quiero el Starter Kit Premium" target="_blank"
+                            class="btn-pedir">Pedir</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BANNER IMAGEN FULL WIDTH -->
+    <!-- Descomenta cuando tengas imagen banner:
+    <div class="banner-full">
+        <img src="img/banner-lifestyle.jpg" alt="CLOUDKINGZ Lifestyle" class="banner-full__img">
+        <div class="banner-full__overlay">
+            <h2>CALIDAD CERTIFICADA</h2>
+        </div>
+    </div>
+    -->
+
+    <!-- WHY US -->
+    <section class="why" id="nosotros">
+        <div class="why__content">
+            <span class="section-label reveal">// 03 — Nuestra promesa</span>
+            <h2 class="section-title reveal">¿POR QUÉ<br>CLOUDKINGZ?</h2>
+            <div class="why__features">
+                <div class="why-item reveal">
+                    <div class="why-item__num">01</div>
+                    <div class="why-item__body">
+                        <div class="why-item__title">Calidad Certificada</div>
+                        <div class="why-item__text">Todos nuestros productos son testeados. Pureza real, sin cortes ni
+                            aditivos dañinos.</div>
+                    </div>
+                </div>
+                <div class="why-item reveal">
+                    <div class="why-item__num">02</div>
+                    <div class="why-item__body">
+                        <div class="why-item__title">Envío Discreto</div>
+                        <div class="why-item__text">Empaque neutro. Entrega en 24–48h en toda Bogotá y Colombia.</div>
+                    </div>
+                </div>
+                <div class="why-item reveal">
+                    <div class="why-item__num">03</div>
+                    <div class="why-item__body">
+                        <div class="why-item__title">Atención por WhatsApp</div>
+                        <div class="why-item__text">Te ayudamos a elegir el producto ideal para tu experiencia y
+                            tolerancia.</div>
+                    </div>
+                </div>
+                <div class="why-item reveal">
+                    <div class="why-item__num">04</div>
+                    <div class="why-item__body">
+                        <div class="why-item__title">100% Colombiano</div>
+                        <div class="why-item__text">Operamos desde Colombia, conocemos el mercado y entendemos lo que
+                            necesitas.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="why__visual reveal">
+            <!-- Puedes poner imagen aquí: -->
+            <!-- <img src="img/why-us.jpg" alt="CLOUDKINGZ Premium" class="why__img"> -->
+            <div class="why__visual-placeholder">
+                <div class="why__ring why__ring--1"></div>
+                <div class="why__ring why__ring--2"></div>
+                <div class="why__glow"></div>
+                <div class="why__hex">🌿</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="reviews">
+        <div class="testimonials__header reveal">
+            <span class="section-label">// 04 — Comunidad</span>
+            <h2 class="section-title">LO QUE DICEN<br>LOS REYES</h2>
+        </div>
+        <div class="testimonials__grid">
+            <div class="testi-card reveal">
+                <div class="testi-card__stars">★★★★★</div>
+                <div class="testi-card__text">"El Live Resin de Blue Dream es lo mejor que he probado. Sabor increíble y
+                    efecto inmediato. Pedido #3 y no paro."</div>
+                <div class="testi-card__author">— @kingblazer420</div>
+            </div>
+            <div class="testi-card reveal">
+                <div class="testi-card__stars">★★★★★</div>
+                <div class="testi-card__text">"Llegó súper discreto y rápido. La batería Stealth es perfecta para salir.
+                    Ya le recomendé a 3 amigos."</div>
+                <div class="testi-card__author">— @smokequeenco</div>
+            </div>
+            <div class="testi-card reveal">
+                <div class="testi-card__stars">★★★★★</div>
+                <div class="testi-card__text">"El OG Kush al 91% me sorprendió. Terpenos reales, no el sabor artificial
+                    de otras marcas. Calidad real."</div>
+                <div class="testi-card__author">— @terpenehunter</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / WHATSAPP -->
+    <section class="cta-section">
+        <div class="cta-section__bg"></div>
+        <div class="cta-section__content reveal">
+            <h2 class="cta-section__title">ÚNETE A<br>LA <span>NUBE</span></h2>
+            <p class="cta-section__sub">Recibe drops exclusivos, descuentos y novedades directo a tu WhatsApp.</p>
+            <a href="https://wa.me/573158170584" target="_blank" class="btn-wa-big">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Chatear en WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__brand">
+                <a href="#" class="nav__logo">CLOUD<span>KINGZ</span></a>
+                <p>Vape THC premium con calidad certificada. Discreción total, sabor real, experiencia de otro nivel.
+                    Colombia 🇨🇴</p>
+                <div class="footer__social">
+                    <a href="https://wa.me/573158170584" target="_blank" title="WhatsApp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                    </a>
+                    <a href="#" title="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="#" title="Telegram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>Productos</h4>
+                <ul>
+                    <li><a href="#">Cartuchos</a></li>
+                    <li><a href="#">Baterías</a></li>
+                    <li><a href="#">Desechables</a></li>
+                    <li><a href="#">Pods</a></li>
+                    <li><a href="#">Combos</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Info</h4>
+                <ul>
+                    <li><a href="#">Cómo ordenar</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Garantía</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="https://wa.me/573000000000" target="_blank">WhatsApp</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Telegram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__copy">© 2025 CLOUDKINGZ — COLOMBIA 🇨🇴</div>
+            <div class="footer__disclaimer">+18. El consumo de THC puede ser ilegal en algunas regiones del pais. Consulta las
+                leyes de tu región.</div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/573158170584" target="_blank" class="wa-float" title="Pedir por WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
