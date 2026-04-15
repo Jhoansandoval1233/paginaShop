@@ -4,539 +4,2255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLOUDKINGZ — THC Vape Premium Colombia</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>CELESTE — Accesorios de Mujer · Villavicencio</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        :root {
+            --ivory: #faf7f2;
+            --cream: #f2ece0;
+            --warm: #e8ddd0;
+            --sky: #7bbfdc;
+            --sky-lt: #b3d9ec;
+            --sky-dk: #4a8fb0;
+            --rose: #c97c7c;
+            --ink: #1a1714;
+            --charcoal: #2e2b27;
+            --muted: #8a7f74;
+            --border: rgba(123, 191, 220, .22)
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: var(--ivory);
+            color: var(--ink);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream)
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--sky)
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 56px;
+            height: 72px;
+            background: rgba(250, 247, 242, .95);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            transition: box-shadow .3s
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 40px rgba(26, 23, 20, .07)
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none
+        }
+
+        .nav-logo span {
+            color: var(--sky-dk)
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none
+        }
+
+        .nav-links a {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color .2s;
+            position: relative
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0;
+            height: 1px;
+            background: var(--sky-dk);
+            transition: width .3s
+        }
+
+        .nav-links a:hover {
+            color: var(--ink)
+        }
+
+        .nav-links a:hover::after {
+            width: 100%
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px
+        }
+
+        .btn-cart {
+            position: relative;
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            background: var(--ink);
+            color: var(--ivory);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background .25s;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .btn-cart:hover {
+            background: var(--sky-dk)
+        }
+
+        .cart-count {
+            background: var(--sky);
+            color: #fff;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            display: none
+        }
+
+        .cart-count.show {
+            display: flex
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 1px;
+            background: var(--ink);
+            transition: all .3s
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(6px) rotate(45deg)
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg)
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--ivory);
+            z-index: 199;
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease, padding .3s;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .mobile-menu.open {
+            max-height: 400px;
+            padding: 32px 24px
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 24px
+        }
+
+        .mobile-menu a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 300;
+            color: var(--ink);
+            text-decoration: none;
+            transition: color .2s
+        }
+
+        .mobile-menu a:hover {
+            color: var(--sky-dk)
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 72px;
+            overflow: hidden
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 56px;
+            position: relative;
+            z-index: 2
+        }
+
+        .hero-tag {
+            font-size: 9px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--sky-dk);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            animation: fadeUp .8s ease both
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 32px;
+            height: 1px;
+            background: var(--sky-dk)
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(60px, 6.5vw, 100px);
+            font-weight: 300;
+            line-height: .95;
+            letter-spacing: -1px;
+            animation: fadeUp .9s .1s ease both;
+            opacity: 0;
+            animation-fill-mode: forwards
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--sky-dk)
+        }
+
+        .hero h1 strong {
+            font-weight: 600;
+            display: block
+        }
+
+        .hero-sub {
+            font-size: 12px;
+            letter-spacing: .5px;
+            line-height: 1.9;
+            color: var(--muted);
+            max-width: 360px;
+            margin: 32px 0 48px;
+            animation: fadeUp 1s .2s ease both;
+            opacity: 0;
+            animation-fill-mode: forwards
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: fadeUp 1s .3s ease both;
+            opacity: 0;
+            animation-fill-mode: forwards
+        }
+
+        .btn-primary {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            background: var(--ink);
+            color: var(--ivory);
+            padding: 15px 38px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background .3s
+        }
+
+        .btn-primary:hover {
+            background: var(--sky-dk)
+        }
+
+        .btn-outline {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            background: transparent;
+            color: var(--ink);
+            padding: 14px 38px;
+            border: 1px solid var(--warm);
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .25s
+        }
+
+        .btn-outline:hover {
+            border-color: var(--sky-dk);
+            color: var(--sky-dk)
+        }
+
+        .hero-right {
+            position: relative;
+            background: linear-gradient(135deg, #ddf0f7 0%, #f2ece0 100%);
+            overflow: hidden;
+            min-height: 600px
+        }
+
+        .hero-right-inner {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .hero-ornament {
+            position: absolute;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 260px;
+            font-weight: 300;
+            color: rgba(123, 191, 220, .12);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            letter-spacing: -10px
+        }
+
+        .hero-img-placeholder {
+            width: 280px;
+            height: 380px;
+            background: rgba(123, 191, 220, .18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            position: relative;
+            z-index: 1;
+            border: 2px solid rgba(123, 191, 220, .3);
+            animation: float 6s ease-in-out infinite
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-12px)
+            }
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 48px;
+            right: 48px;
+            z-index: 3;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: var(--sky-dk);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            animation: spin 20s linear infinite
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .hero-badge-text {
+            font-size: 8px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #fff;
+            animation: spinReverse 20s linear infinite;
+            padding: 8px;
+            line-height: 1.4
+        }
+
+        @keyframes spinReverse {
+            to {
+                transform: rotate(-360deg)
+            }
+        }
+
+        /* MARQUEE */
+        .marquee-bar {
+            padding: 16px 0;
+            background: var(--sky-dk);
+            overflow: hidden;
+            white-space: nowrap
+        }
+
+        .marquee-track {
+            display: inline-flex;
+            animation: marquee 24s linear infinite
+        }
+
+        .marquee-item {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, .9);
+            padding: 0 48px;
+            display: inline-flex;
+            align-items: center;
+            gap: 48px
+        }
+
+        .marquee-dot {
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, .5);
+            border-radius: 50%
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        /* SECTION SHARED */
+        .section-eyebrow {
+            font-size: 9px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--sky-dk);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px
+        }
+
+        .section-eyebrow::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--sky-dk)
+        }
+
+        .section-title-serif {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(44px, 5vw, 68px);
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -1px
+        }
+
+        .section-title-serif em {
+            font-style: italic;
+            color: var(--sky-dk)
+        }
+
+        /* CATEGORIES */
+        .categories {
+            padding: 120px 56px;
+            background: var(--ivory)
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 3px;
+            margin-top: 56px
+        }
+
+        .cat-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--cream)
+        }
+
+        .cat-item--large {
+            grid-row: 1/3
+        }
+
+        .cat-img-area {
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            background: var(--warm);
+            transition: transform .5s ease
+        }
+
+        .cat-item--large .cat-img-area {
+            min-height: 520px;
+            font-size: 110px
+        }
+
+        .cat-item:hover .cat-img-area {
+            transform: scale(1.04)
+        }
+
+        .cat-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26, 23, 20, .7) 0%, transparent 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 28px;
+            transition: background .3s
+        }
+
+        .cat-item:hover .cat-overlay {
+            background: linear-gradient(to top, rgba(26, 23, 20, .85) 0%, rgba(26, 23, 20, .1) 60%)
+        }
+
+        .cat-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--ivory);
+            letter-spacing: 1px
+        }
+
+        .cat-item--large .cat-name {
+            font-size: 38px
+        }
+
+        .cat-count {
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(250, 247, 242, .55);
+            margin-top: 4px
+        }
+
+        .cat-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--sky-lt);
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all .3s
+        }
+
+        .cat-item:hover .cat-arrow {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        /* STATS */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: var(--cream);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border)
+        }
+
+        .stat-cell {
+            padding: 48px 32px;
+            text-align: center;
+            border-right: 1px solid var(--border)
+        }
+
+        .stat-cell:last-child {
+            border-right: none
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 300;
+            color: var(--sky-dk);
+            line-height: 1
+        }
+
+        .stat-label {
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 8px
+        }
+
+        /* PRODUCTS */
+        .products {
+            padding: 120px 56px;
+            background: var(--ivory)
+        }
+
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 64px;
+            flex-wrap: wrap;
+            gap: 24px
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap
+        }
+
+        .filter-tab {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            background: none;
+            border: 1px solid var(--warm);
+            padding: 9px 18px;
+            cursor: pointer;
+            color: var(--muted);
+            transition: all .2s
+        }
+
+        .filter-tab.active,
+        .filter-tab:hover {
+            background: var(--ink);
+            color: var(--ivory);
+            border-color: var(--ink)
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 32px
+        }
+
+        .prod-card {
+            cursor: pointer
+        }
+
+        .prod-card__img-wrap {
+            position: relative;
+            overflow: hidden;
+            background: var(--cream);
+            aspect-ratio: 3/4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            margin-bottom: 16px
+        }
+
+        .prod-card__img-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 23, 20, 0);
+            transition: background .3s
+        }
+
+        .prod-card:hover .prod-card__img-wrap::after {
+            background: rgba(26, 23, 20, .04)
+        }
+
+        .prod-card__badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 2;
+            font-size: 8px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 5px 10px
+        }
+
+        .badge-new {
+            background: var(--ink);
+            color: var(--ivory)
+        }
+
+        .badge-hot {
+            background: var(--rose);
+            color: #fff
+        }
+
+        .badge-sale {
+            background: var(--sky-dk);
+            color: #fff
+        }
+
+        .prod-card__add {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background: var(--ink);
+            color: var(--ivory);
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 13px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transform: translateY(100%);
+            transition: transform .3s ease
+        }
+
+        .prod-card:hover .prod-card__add {
+            transform: translateY(0)
+        }
+
+        .prod-card__add:hover {
+            background: var(--sky-dk)
+        }
+
+        .prod-card__brand {
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 4px
+        }
+
+        .prod-card__name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 8px
+        }
+
+        .prod-card__footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .prod-card__price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--charcoal)
+        }
+
+        .prod-card__price s {
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 300;
+            margin-right: 6px
+        }
+
+        .prod-card__wishlist {
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--warm);
+            background: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all .2s;
+            font-size: 14px
+        }
+
+        .prod-card__wishlist:hover {
+            border-color: var(--rose);
+            background: var(--rose);
+            color: #fff
+        }
+
+        /* CARRITO PANEL */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 23, 20, .5);
+            z-index: 300;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s
+        }
+
+        .cart-overlay.open {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 420px;
+            max-width: 95vw;
+            background: var(--ivory);
+            z-index: 301;
+            transform: translateX(100%);
+            transition: transform .35s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -8px 0 40px rgba(26, 23, 20, .12)
+        }
+
+        .cart-panel.open {
+            transform: translateX(0)
+        }
+
+        .cart-header {
+            padding: 28px 28px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .cart-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 300;
+            letter-spacing: 1px
+        }
+
+        .cart-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 22px;
+            color: var(--muted);
+            padding: 4px;
+            transition: color .2s
+        }
+
+        .cart-close:hover {
+            color: var(--ink)
+        }
+
+        .cart-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 28px
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted)
+        }
+
+        .cart-empty-icon {
+            font-size: 48px;
+            margin-bottom: 16px
+        }
+
+        .cart-empty p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 300
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .cart-item-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0
+        }
+
+        .cart-item-info {
+            flex: 1;
+            min-width: 0
+        }
+
+        .cart-item-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 2px
+        }
+
+        .cart-item-brand {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted)
+        }
+
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px
+        }
+
+        .qty-btn {
+            width: 26px;
+            height: 26px;
+            border: 1px solid var(--warm);
+            background: none;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s
+        }
+
+        .qty-btn:hover {
+            background: var(--ink);
+            color: var(--ivory);
+            border-color: var(--ink)
+        }
+
+        .qty-num {
+            font-size: 13px;
+            font-weight: 500;
+            min-width: 20px;
+            text-align: center
+        }
+
+        .cart-item-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--charcoal);
+            white-space: nowrap
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--muted);
+            font-size: 16px;
+            padding: 4px;
+            transition: color .2s;
+            flex-shrink: 0
+        }
+
+        .cart-item-remove:hover {
+            color: var(--rose)
+        }
+
+        /* NOTA PEDIDO */
+        .cart-note-area {
+            padding: 16px 0 8px
+        }
+
+        .cart-note-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 8px;
+            display: block
+        }
+
+        .cart-note-input {
+            width: 100%;
+            border: 1px solid var(--warm);
+            background: var(--cream);
+            padding: 10px 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            color: var(--ink);
+            resize: vertical;
+            min-height: 70px;
+            transition: border-color .2s
+        }
+
+        .cart-note-input:focus {
+            outline: none;
+            border-color: var(--sky-dk)
+        }
+
+        .cart-footer {
+            padding: 20px 28px;
+            border-top: 1px solid var(--border)
+        }
+
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px
+        }
+
+        .cart-total-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted)
+        }
+
+        .cart-total-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--ink)
+        }
+
+        .cart-shipping {
+            font-size: 10px;
+            color: var(--sky-dk);
+            letter-spacing: 1px;
+            margin-bottom: 20px
+        }
+
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            background: #25d366;
+            color: #fff;
+            border: none;
+            padding: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .25s;
+            text-decoration: none
+        }
+
+        .btn-whatsapp:hover {
+            background: #1da851
+        }
+
+        .btn-clear {
+            width: 100%;
+            background: none;
+            border: 1px solid var(--warm);
+            color: var(--muted);
+            padding: 10px;
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: all .2s
+        }
+
+        .btn-clear:hover {
+            border-color: var(--rose);
+            color: var(--rose)
+        }
+
+        /* EDITORIAL */
+        .editorial {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+            background: var(--ink);
+            overflow: hidden
+        }
+
+        .editorial-text {
+            padding: 80px 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center
+        }
+
+        .editorial-eyebrow {
+            font-size: 9px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--sky-lt);
+            font-weight: 600;
+            margin-bottom: 24px
+        }
+
+        .editorial-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(42px, 4.5vw, 64px);
+            font-weight: 300;
+            line-height: 1.05;
+            color: var(--ivory)
+        }
+
+        .editorial-title em {
+            font-style: italic;
+            color: var(--sky-lt)
+        }
+
+        .editorial-body {
+            font-size: 12px;
+            letter-spacing: .5px;
+            line-height: 2;
+            color: rgba(250, 247, 242, .5);
+            max-width: 380px;
+            margin: 28px 0 40px
+        }
+
+        .editorial-visual {
+            background: #263240;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            overflow: hidden
+        }
+
+        .editorial-visual::before {
+            content: 'CELESTE';
+            position: absolute;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 120px;
+            font-weight: 300;
+            color: rgba(123, 191, 220, .06);
+            letter-spacing: -4px;
+            white-space: nowrap
+        }
+
+        /* FEATURES */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: var(--cream);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border)
+        }
+
+        .feature-item {
+            padding: 56px 40px;
+            border-right: 1px solid var(--border);
+            text-align: center;
+            transition: background .2s
+        }
+
+        .feature-item:last-child {
+            border-right: none
+        }
+
+        .feature-item:hover {
+            background: var(--ivory)
+        }
+
+        .feature-icon {
+            font-size: 30px;
+            margin-bottom: 20px
+        }
+
+        .feature-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            font-weight: 400;
+            margin-bottom: 8px
+        }
+
+        .feature-text {
+            font-size: 11px;
+            color: var(--muted);
+            line-height: 1.7;
+            letter-spacing: .3px
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 120px 56px;
+            background: var(--ivory);
+            text-align: center
+        }
+
+        .testi-header {
+            margin-bottom: 64px
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            text-align: left
+        }
+
+        .testi-card {
+            padding: 40px;
+            border: 1px solid var(--border);
+            position: relative;
+            transition: border-color .3s, box-shadow .3s
+        }
+
+        .testi-card:hover {
+            border-color: var(--sky);
+            box-shadow: 0 8px 32px rgba(123, 191, 220, .15)
+        }
+
+        .testi-stars {
+            color: var(--sky-dk);
+            font-size: 13px;
+            letter-spacing: 4px;
+            margin-bottom: 20px
+        }
+
+        .testi-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--charcoal);
+            margin-bottom: 24px
+        }
+
+        .testi-author {
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 600
+        }
+
+        .testi-verified {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 8px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--sky-dk);
+            background: rgba(123, 191, 220, .12);
+            padding: 4px 10px;
+            font-weight: 600
+        }
+
+        /* CTA */
+        .cta-section {
+            background: var(--cream);
+            padding: 120px 56px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center
+        }
+
+        .cta-text {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.9;
+            letter-spacing: .5px;
+            margin-bottom: 40px;
+            margin-top: 24px
+        }
+
+        .wa-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            background: #25d366;
+            color: #fff;
+            padding: 16px 36px;
+            text-decoration: none;
+            transition: all .25s
+        }
+
+        .wa-btn:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, .25)
+        }
+
+        .cta-right {
+            display: flex;
+            flex-direction: column;
+            gap: 3px
+        }
+
+        .cta-mosaic {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px
+        }
+
+        .cta-tile {
+            background: var(--warm);
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 52px;
+            transition: background .3s
+        }
+
+        .cta-tile:hover {
+            background: var(--sky-lt)
+        }
+
+        .cta-tile.wide {
+            grid-column: 1/-1;
+            aspect-ratio: 2/1;
+            font-size: 68px
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--ink);
+            padding: 80px 56px 40px;
+            color: var(--ivory)
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 56px;
+            margin-bottom: 64px
+        }
+
+        .footer-brand .brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 34px;
+            font-weight: 300;
+            letter-spacing: 7px;
+            color: var(--ivory);
+            margin-bottom: 16px;
+            display: block
+        }
+
+        .footer-brand .brand-name span {
+            color: var(--sky-lt)
+        }
+
+        .footer-brand p {
+            font-size: 11px;
+            color: rgba(250, 247, 242, .4);
+            line-height: 1.8;
+            max-width: 260px;
+            letter-spacing: .5px
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(123, 191, 220, .2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(250, 247, 242, .35);
+            text-decoration: none;
+            transition: all .2s
+        }
+
+        .footer-social a:hover {
+            border-color: var(--sky-lt);
+            color: var(--sky-lt)
+        }
+
+        .footer-col h4 {
+            font-size: 9px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--sky-lt);
+            font-weight: 600;
+            margin-bottom: 24px
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        .footer-col a {
+            font-size: 12px;
+            color: rgba(250, 247, 242, .4);
+            text-decoration: none;
+            transition: color .2s;
+            letter-spacing: .5px
+        }
+
+        .footer-col a:hover {
+            color: var(--sky-lt)
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(123, 191, 220, .1);
+            padding-top: 32px;
+            flex-wrap: wrap;
+            gap: 12px
+        }
+
+        .footer-copy {
+            font-size: 10px;
+            color: rgba(250, 247, 242, .25);
+            letter-spacing: 2px;
+            text-transform: uppercase
+        }
+
+        .footer-cards {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .footer-card {
+            font-size: 8px;
+            letter-spacing: 1px;
+            border: 1px solid rgba(250, 247, 242, .1);
+            padding: 4px 10px;
+            color: rgba(250, 247, 242, .25);
+            text-transform: uppercase
+        }
+
+        /* WA FLOAT */
+        .wa-float {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 500;
+            width: 56px;
+            height: 56px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, .35);
+            text-decoration: none;
+            transition: all .25s
+        }
+
+        .wa-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 32px rgba(37, 211, 102, .5)
+        }
+
+        .wa-float-ping {
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(37, 211, 102, .4);
+            animation: ping 2s ease-out infinite
+        }
+
+        @keyframes ping {
+            0% {
+                transform: scale(1);
+                opacity: 1
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0
+            }
+        }
+
+        /* TOAST */
+        .toast {
+            position: fixed;
+            bottom: 100px;
+            right: 32px;
+            z-index: 600;
+            background: var(--ink);
+            color: var(--ivory);
+            padding: 12px 20px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all .3s;
+            pointer-events: none;
+            border-left: 3px solid var(--sky)
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1
+        }
+
+        /* REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all .7s ease
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @media(max-width:1024px) {
+            nav {
+                padding: 0 24px
+            }
+
+            .nav-links {
+                display: none
+            }
+
+            .hamburger {
+                display: flex
+            }
+
+            .hero {
+                grid-template-columns: 1fr
+            }
+
+            .hero-right {
+                min-height: 340px
+            }
+
+            .hero-left {
+                padding: 60px 24px
+            }
+
+            .cat-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .cat-item--large {
+                grid-row: auto
+            }
+
+            .cat-item--large .cat-img-area {
+                min-height: 280px
+            }
+
+            .editorial {
+                grid-template-columns: 1fr
+            }
+
+            .editorial-visual {
+                min-height: 260px
+            }
+
+            .cta-section {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px
+            }
+
+            .testi-grid {
+                grid-template-columns: 1fr
+            }
+
+            .features {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .stat-cell:nth-child(2) {
+                border-right: none
+            }
+
+            .categories,
+            .products,
+            .testimonials,
+            .cta-section {
+                padding: 80px 24px
+            }
+        }
+
+        @media(max-width:600px) {
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px
+            }
+
+            .filter-tabs {
+                display: none
+            }
+
+            .cat-grid {
+                grid-template-columns: 1fr
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- AGE GATE -->
-    <div class="age-gate" id="ageGate">
-        <div class="age-gate__bg"></div>
-        <div class="age-gate__content">
-            <div class="age-gate__logo">☁ CLOUDKINGZ</div>
-            <div class="age-gate__sub">THC VAPE PREMIUM · COLOMBIA</div>
-            <h2 class="age-gate__title">¿Eres mayor<br>de 18 años?</h2>
-            <p class="age-gate__text">Este sitio contiene productos de THC para adultos mayores de edad.</p>
-            <div class="age-gate__btns">
-                <button class="btn-age-yes" onclick="enterSite()">Sí, tengo +18</button>
-                <button class="btn-age-no" onclick="window.location='https://google.com'">No, salir</button>
+    <!-- CARRITO OVERLAY -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- CARRITO PANEL -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <div class="cart-title">Tu pedido</div>
+            <button class="cart-close" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <div class="cart-empty" id="cartEmpty">
+                <div class="cart-empty-icon">🛍️</div>
+                <p>Tu carrito está vacío</p>
+                <p style="font-size:11px;color:var(--muted);margin-top:8px;letter-spacing:.5px">Agrega productos para
+                    hacer tu pedido</p>
             </div>
-            <p class="age-gate__disclaimer">Al ingresar confirmas que eres mayor de edad y que el consumo de THC es
-                legal en tu región.</p>
+            <div id="cartItems"></div>
+            <div class="cart-note-area" id="cartNoteArea" style="display:none">
+                <label class="cart-note-label">Nota para tu pedido (opcional)</label>
+                <textarea class="cart-note-input" id="cartNote"
+                    placeholder="Ej: talla, color preferido, es un regalo..."></textarea>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none">
+            <div class="cart-total-row">
+                <span class="cart-total-label">Total estimado</span>
+                <span class="cart-total-price" id="cartTotal">$0</span>
+            </div>
+            <div class="cart-shipping">✦ Envío a Villavicencio y toda Colombia</div>
+            <a href="#" class="btn-whatsapp" id="waOrderBtn" onclick="sendToWhatsApp(); return false;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Enviar pedido por WhatsApp
+            </a>
+            <button class="btn-clear" onclick="clearCart()">Vaciar carrito</button>
         </div>
     </div>
 
-    <!-- CURSOR -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
 
     <!-- NAV -->
-    <nav class="nav" id="nav">
-        <a href="#" class="nav__logo">CLOUD<span>KINGZ</span></a>
-        <ul class="nav__links">
+    <nav id="nav">
+        <a href="#" class="nav-logo">CELES<span>TE</span></a>
+        <ul class="nav-links">
             <li><a href="#categorias">Categorías</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#productos">Colección</a></li>
+            <li><a href="#nosotros">Nosotras</a></li>
+            <li><a href="#reviews">Reseñas</a></li>
         </ul>
-        <div class="nav__right">
-            <a href="https://wa.me/573158170584" target="_blank" class="nav__whatsapp">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <div class="nav-right">
+            <a href="https://wa.me/573203259834" target="_blank"
+                style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;font-weight:500;transition:color .2s;display:flex;align-items:center;gap:7px"
+                onmouseover="this.style.color='var(--sky-dk)'" onmouseout="this.style.color='var(--muted)'">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#25d366">
                     <path
                         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
                 WhatsApp
             </a>
-            <button class="btn-nav-cta">Pedir Ahora</button>
+            <button class="btn-cart" onclick="toggleCart()">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 01-8 0" />
+                </svg>
+                Mi pedido
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
         </div>
-        <button class="nav__hamburger" id="hamburger">
-            <span></span><span></span><span></span>
-        </button>
     </nav>
 
-    <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
             <li><a href="#categorias" onclick="closeMobileMenu()">Categorías</a></li>
-            <li><a href="#productos" onclick="closeMobileMenu()">Productos</a></li>
-            <li><a href="#nosotros" onclick="closeMobileMenu()">Nosotros</a></li>
-            <li><a href="#reviews" onclick="closeMobileMenu()">Reviews</a></li>
-            <li><a href="https://wa.me/573158170584" target="_blank">WhatsApp →</a></li>
+            <li><a href="#productos" onclick="closeMobileMenu()">Colección</a></li>
+            <li><a href="#nosotros" onclick="closeMobileMenu()">Nosotras</a></li>
+            <li><a href="#reviews" onclick="closeMobileMenu()">Reseñas</a></li>
+            <li><a href="https://wa.me/573203259834" target="_blank">WhatsApp →</a></li>
         </ul>
     </div>
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero__bg"></div>
-        <div class="hero__grid-lines"></div>
-
-        <!-- Imagen hero principal -->
-        <div class="hero__visual">
-            <div class="hero__img-wrap">
-                <img src="img/cartuchos.jpeg" alt="Cartuchos THC Premium" class="hero__img" id="heroImg">
-                <!-- Si tienes más imágenes hero, agrégalas aquí -->
-                <!-- <img src="img/hero-2.jpg" alt="..." class="hero__img hero__img--2"> -->
-            </div>
-            <div class="hero__img-glow"></div>
-        </div>
-
-        <div class="hero__content">
-            <span class="hero__tag">✦ Vape THC Premium — Envío discreto · Colombia</span>
-            <h1 class="hero__title">
-                ELEVA<br>
-                <span class="accent">TU</span><br>
-                <span class="gold">NIVEL</span>
-            </h1>
-            <p class="hero__sub">Los cartuchos, baterías y vapes de THC de mayor calidad. Extracción premium, sabores
-                únicos, discreción total.</p>
-            <div class="hero__btns">
-                <a href="#productos" class="btn-primary">Ver Catálogo</a>
-                <a href="https://wa.me/573158170584" target="_blank" class="btn-secondary">Ordenar por WA</a>
+        <div class="hero-left">
+            <div class="hero-tag">Nueva Colección 2025</div>
+            <h1>Joyería<br><em>que habla</em><br><strong>por ti</strong></h1>
+            <p class="hero-sub">Cadenas, aretes, pulseras y relojes seleccionados para la mujer que lleva el estilo en
+                cada detalle. Desde Villavicencio para toda Colombia.</p>
+            <div class="hero-btns">
+                <a href="#productos" class="btn-primary">Ver Colección</a>
+                <a href="https://wa.me/573203259834" target="_blank" class="btn-outline">Pedir por WA</a>
             </div>
         </div>
-
-        <div class="hero__scroll">
-            <div class="hero__scroll-line"></div>
-            <span>scroll</span>
+        <div class="hero-right">
+            <div class="hero-right-inner">
+                <div class="hero-ornament">◆</div>
+                <div class="hero-img-placeholder">💍</div>
+            </div>
+            <div class="hero-badge">
+                <div class="hero-badge-text">✦ envío<br>gratis<br>colombia ✦</div>
+            </div>
         </div>
     </section>
-
-    <!-- STATS BAR -->
-    <div class="stats-bar">
-        <div class="stat-item reveal">
-            <div class="stat-number">500<span>+</span></div>
-            <div class="stat-label">Clientes activos</div>
-        </div>
-        <div class="stat-item reveal">
-            <div class="stat-number">99<span>%</span></div>
-            <div class="stat-label">THC puro</div>
-        </div>
-        <div class="stat-item reveal">
-            <div class="stat-number">24<span>H</span></div>
-            <div class="stat-label">Envío express</div>
-        </div>
-        <div class="stat-item reveal">
-            <div class="stat-number">30<span>+</span></div>
-            <div class="stat-label">Cepas disponibles</div>
-        </div>
-    </div>
 
     <!-- MARQUEE -->
     <div class="marquee-bar">
         <div class="marquee-track">
-            <span class="marquee-item">CARTUCHOS THC <i></i> BATERÍAS PREMIUM</span>
-            <span class="marquee-item">LIVE RESIN <i></i> DISTILADO PURO</span>
-            <span class="marquee-item">ENVÍO DISCRETO <i></i> CALIDAD GARANTIZADA</span>
-            <span class="marquee-item">COLOMBIA <i></i> SABOR REAL</span>
-            <span class="marquee-item">CARTUCHOS THC <i></i> BATERÍAS PREMIUM</span>
-            <span class="marquee-item">LIVE RESIN <i></i> DISTILADO PURO</span>
-            <span class="marquee-item">ENVÍO DISCRETO <i></i> CALIDAD GARANTIZADA</span>
-            <span class="marquee-item">COLOMBIA <i></i> SABOR REAL</span>
+            <span class="marquee-item">Cadenas de Oro <span class="marquee-dot"></span></span>
+            <span class="marquee-item"><em>Aretes de Lujo</em> <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Pulseras Elegantes <span class="marquee-dot"></span></span>
+            <span class="marquee-item"><em>Relojes Premium</em> <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Anillos de Plata <span class="marquee-dot"></span></span>
+            <span class="marquee-item"><em>Villavicencio ◆</em> <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Cadenas de Oro <span class="marquee-dot"></span></span>
+            <span class="marquee-item"><em>Aretes de Lujo</em> <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Pulseras Elegantes <span class="marquee-dot"></span></span>
+            <span class="marquee-item"><em>Relojes Premium</em> <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Anillos de Plata <span class="marquee-dot"></span></span>
+            <span class="marquee-item"><em>Villavicencio ◆</em> <span class="marquee-dot"></span></span>
         </div>
     </div>
 
     <!-- CATEGORIES -->
     <section class="categories" id="categorias">
-        <div class="section-header reveal">
-            <span class="section-label">// 01 — Línea completa</span>
-            <h2 class="section-title">CATEGORÍAS</h2>
+        <div class="reveal">
+            <div class="section-eyebrow">Línea completa</div>
+            <h2 class="section-title-serif">Explora<br><em>la colección</em></h2>
         </div>
-        <div class="categories__grid">
-
-            <div class="cat-card reveal">
-                <!-- Agrega imagen: <img src="img/categoria-cartuchos.jpg" alt="Cartuchos"> -->
-                <div class="cat-card__img-wrap">
-                    <div class="cat-card__icon">🛢️</div>
-                    <!-- Descomenta cuando tengas imagen:
-                    <img src="img/categoria-cartuchos.jpg" alt="Cartuchos THC" class="cat-card__img"> -->
-                </div>
-                <div class="cat-card__body">
-                    <div class="cat-card__name">Cartuchos</div>
-                    <div class="cat-card__desc">0.5g y 1g. Distilado, Live Resin, Live Rosin y Full Spectrum.</div>
-                    <div class="cat-card__arrow">Explorar <span>→</span></div>
+        <div class="cat-grid">
+            <div class="cat-item cat-item--large reveal" onclick="filterProducts('Cadenas')">
+                <div class="cat-img-area">📿</div>
+                <div class="cat-overlay">
+                    <div class="cat-name">Cadenas</div>
+                    <div class="cat-count">18 productos</div>
+                    <div class="cat-arrow">Ver todo →</div>
                 </div>
             </div>
-
-            <div class="cat-card reveal">
-                <div class="cat-card__img-wrap">
-                    <div class="cat-card__icon">🔋</div>
-                </div>
-                <div class="cat-card__body">
-                    <div class="cat-card__name">Baterías</div>
-                    <div class="cat-card__desc">Voltaje variable, preheat y diseños discretos para uso diario.</div>
-                    <div class="cat-card__arrow">Explorar <span>→</span></div>
+            <div class="cat-item reveal" onclick="filterProducts('Aretes')">
+                <div class="cat-img-area">💎</div>
+                <div class="cat-overlay">
+                    <div class="cat-name">Aretes</div>
+                    <div class="cat-count">24 productos</div>
+                    <div class="cat-arrow">Ver todo →</div>
                 </div>
             </div>
-
-            <div class="cat-card reveal">
-                <div class="cat-card__img-wrap">
-                    <div class="cat-card__icon">💨</div>
-                </div>
-                <div class="cat-card__body">
-                    <div class="cat-card__name">Desechables</div>
-                    <div class="cat-card__desc">All-in-one de 1g y 2g. Sin carga. Listos para usar.</div>
-                    <div class="cat-card__arrow">Explorar <span>→</span></div>
+            <div class="cat-item reveal" onclick="filterProducts('Relojes')">
+                <div class="cat-img-area">⌚</div>
+                <div class="cat-overlay">
+                    <div class="cat-name">Relojes</div>
+                    <div class="cat-count">12 productos</div>
+                    <div class="cat-arrow">Ver todo →</div>
                 </div>
             </div>
-
-            <div class="cat-card reveal">
-                <div class="cat-card__img-wrap">
-                    <div class="cat-card__icon">🌿</div>
-                </div>
-                <div class="cat-card__body">
-                    <div class="cat-card__name">Pods</div>
-                    <div class="cat-card__desc">Sistema cerrado con la mejor experiencia de sabor y discreción.</div>
-                    <div class="cat-card__arrow">Explorar <span>→</span></div>
+            <div class="cat-item reveal" onclick="filterProducts('Pulseras')">
+                <div class="cat-img-area">✨</div>
+                <div class="cat-overlay">
+                    <div class="cat-name">Pulseras</div>
+                    <div class="cat-count">20 productos</div>
+                    <div class="cat-arrow">Ver todo →</div>
                 </div>
             </div>
-
+            <div class="cat-item reveal" onclick="filterProducts('Anillos')">
+                <div class="cat-img-area">💍</div>
+                <div class="cat-overlay">
+                    <div class="cat-name">Anillos</div>
+                    <div class="cat-count">16 productos</div>
+                    <div class="cat-arrow">Ver todo →</div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- STATS -->
+    <div class="stats-row">
+        <div class="stat-cell reveal">
+            <div class="stat-number">800+</div>
+            <div class="stat-label">Clientas felices</div>
+        </div>
+        <div class="stat-cell reveal">
+            <div class="stat-number">90+</div>
+            <div class="stat-label">Productos únicos</div>
+        </div>
+        <div class="stat-cell reveal">
+            <div class="stat-number">24H</div>
+            <div class="stat-label">Envío express</div>
+        </div>
+        <div class="stat-cell reveal">
+            <div class="stat-number">5★</div>
+            <div class="stat-label">Calificación media</div>
+        </div>
+    </div>
 
     <!-- PRODUCTS -->
     <section class="products" id="productos">
-        <div class="products__header reveal">
-            <span class="section-label">// 02 — Más vendidos</span>
-            <h2 class="section-title">PRODUCTOS<br>DESTACADOS</h2>
+        <div class="products-header reveal">
+            <div>
+                <div class="section-eyebrow">Más vendidos</div>
+                <h2 class="section-title-serif">Piezas<br><em>destacadas</em></h2>
+            </div>
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-tab active" data-cat="Todos" onclick="filterProducts('Todos',this)">Todos</button>
+                <button class="filter-tab" data-cat="Cadenas" onclick="filterProducts('Cadenas',this)">Cadenas</button>
+                <button class="filter-tab" data-cat="Aretes" onclick="filterProducts('Aretes',this)">Aretes</button>
+                <button class="filter-tab" data-cat="Pulseras"
+                    onclick="filterProducts('Pulseras',this)">Pulseras</button>
+                <button class="filter-tab" data-cat="Relojes" onclick="filterProducts('Relojes',this)">Relojes</button>
+            </div>
         </div>
-        <div class="products__grid">
-
-            <div class="prod-card reveal">
-                <div class="prod-card__img-wrap">
-                    <!-- Imagen del producto -->
-                    <img src="img/cartuchos.jpeg" alt="OG Kush Cartucho 1G" class="prod-card__img">
-                    <!-- Fallback emoji si no hay imagen -->
-                    <div class="prod-card__icon-fallback">🛢️</div>
-                    <span class="badge badge--hot">🔥 HOT</span>
-                </div>
-                <div class="prod-card__body">
-                    <div class="prod-card__brand">Distilado Premium</div>
-                    <div class="prod-card__name">OG KUSH CARTUCHO 1G</div>
-                    <div class="prod-card__tags">
-                        <span>THC 91%</span>
-                        <span>Indica</span>
-                        <span>Pino · Tierra</span>
-                    </div>
-                    <div class="prod-card__footer">
-                        <div class="prod-card__price">
-                            $45.000
-                            <small>COP / unidad</small>
-                        </div>
-                        <a href="https://wa.me/573158170584?text=Hola, quiero el OG Kush 1G" target="_blank"
-                            class="btn-pedir">Pedir</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="prod-card reveal">
-                <div class="prod-card__img-wrap">
-                    <!-- <img src="img/blue-dream.jpg" alt="Blue Dream Live Resin" class="prod-card__img"> -->
-                    <div class="prod-card__icon-fallback">💎</div>
-                    <span class="badge badge--new">✦ NUEVO</span>
-                </div>
-                <div class="prod-card__body">
-                    <div class="prod-card__brand">Live Resin</div>
-                    <div class="prod-card__name">BLUE DREAM LIVE RESIN</div>
-                    <div class="prod-card__tags">
-                        <span>THC 86%</span>
-                        <span>Híbrido</span>
-                        <span>Berries</span>
-                    </div>
-                    <div class="prod-card__footer">
-                        <div class="prod-card__price">
-                            $65.000
-                            <small>COP / unidad</small>
-                        </div>
-                        <a href="https://wa.me/573158170584?text=Hola, quiero el Blue Dream Live Resin" target="_blank"
-                            class="btn-pedir">Pedir</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="prod-card reveal">
-                <div class="prod-card__img-wrap">
-                    <!-- <img src="img/bateria-stealth.jpg" alt="Batería Stealth Pro" class="prod-card__img"> -->
-                    <div class="prod-card__icon-fallback">🔋</div>
-                    <span class="badge badge--limited">⚡ LIMITADO</span>
-                </div>
-                <div class="prod-card__body">
-                    <div class="prod-card__brand">Hardware</div>
-                    <div class="prod-card__name">BATERÍA STEALTH PRO</div>
-                    <div class="prod-card__tags">
-                        <span>2.4V–4.0V</span>
-                        <span>USB-C</span>
-                        <span>500mAh</span>
-                    </div>
-                    <div class="prod-card__footer">
-                        <div class="prod-card__price">
-                            $35.000
-                            <small>COP / unidad</small>
-                        </div>
-                        <a href="https://wa.me/573158170584?text=Hola, quiero la Batería Stealth Pro" target="_blank"
-                            class="btn-pedir">Pedir</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="prod-card reveal">
-                <div class="prod-card__img-wrap">
-                    <!-- <img src="img/sour-diesel.jpg" alt="Sour Diesel Disposable" class="prod-card__img"> -->
-                    <div class="prod-card__icon-fallback">💨</div>
-                </div>
-                <div class="prod-card__body">
-                    <div class="prod-card__brand">Desechable 2G</div>
-                    <div class="prod-card__name">SOUR DIESEL DISPOSABLE</div>
-                    <div class="prod-card__tags">
-                        <span>THC 88%</span>
-                        <span>Sativa</span>
-                        <span>Diésel · Cítrico</span>
-                    </div>
-                    <div class="prod-card__footer">
-                        <div class="prod-card__price">
-                            $75.000
-                            <small>COP / unidad</small>
-                        </div>
-                        <a href="https://wa.me/573158170584?text=Hola, quiero el Sour Diesel Disposable" target="_blank"
-                            class="btn-pedir">Pedir</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="prod-card reveal">
-                <div class="prod-card__img-wrap">
-                    <!-- <img src="img/gelato.jpg" alt="Gelato 41 Full Spectrum" class="prod-card__img"> -->
-                    <div class="prod-card__icon-fallback">🌿</div>
-                    <span class="badge badge--new">✦ NUEVO</span>
-                </div>
-                <div class="prod-card__body">
-                    <div class="prod-card__brand">Full Spectrum</div>
-                    <div class="prod-card__name">GELATO 41 FULL SPECTRUM</div>
-                    <div class="prod-card__tags">
-                        <span>THC 84%</span>
-                        <span>Indica</span>
-                        <span>CBN + CBG</span>
-                    </div>
-                    <div class="prod-card__footer">
-                        <div class="prod-card__price">
-                            $60.000
-                            <small>COP / unidad</small>
-                        </div>
-                        <a href="https://wa.me/573000000000?text=Hola, quiero el Gelato 41 Full Spectrum"
-                            target="_blank" class="btn-pedir">Pedir</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="prod-card reveal">
-                <div class="prod-card__img-wrap">
-                    <!-- <img src="img/starter-kit.jpg" alt="Starter Kit Premium" class="prod-card__img"> -->
-                    <div class="prod-card__icon-fallback">✨</div>
-                    <span class="badge badge--limited">⚡ COMBO</span>
-                </div>
-                <div class="prod-card__body">
-                    <div class="prod-card__brand">Kit Starter</div>
-                    <div class="prod-card__name">STARTER KIT PREMIUM</div>
-                    <div class="prod-card__tags">
-                        <span>Batería</span>
-                        <span>2 Cartuchos</span>
-                        <span>Estuche</span>
-                    </div>
-                    <div class="prod-card__footer">
-                        <div class="prod-card__price">
-                            $110.000
-                            <small>COP / kit</small>
-                        </div>
-                        <a href="https://wa.me/573158170584?text=Hola, quiero el Starter Kit Premium" target="_blank"
-                            class="btn-pedir">Pedir</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        <div class="products-grid" id="productsGrid"></div>
     </section>
 
-    <!-- BANNER IMAGEN FULL WIDTH -->
-    <!-- Descomenta cuando tengas imagen banner:
-    <div class="banner-full">
-        <img src="img/banner-lifestyle.jpg" alt="CLOUDKINGZ Lifestyle" class="banner-full__img">
-        <div class="banner-full__overlay">
-            <h2>CALIDAD CERTIFICADA</h2>
+    <!-- EDITORIAL -->
+    <div class="editorial" id="nosotros">
+        <div class="editorial-text">
+            <div class="editorial-eyebrow">Nuestra esencia</div>
+            <h2 class="editorial-title">Cada pieza,<br>una <em>historia</em><br>que contar.</h2>
+            <p class="editorial-body">En CELESTE creemos que los accesorios no son solo adornos — son extensiones de
+                quién eres. Nacidas en Villavicencio, seleccionamos cada cadena, cada arete, cada reloj con cuidado para
+                la mujer que sabe lo que quiere.</p>
+            <a href="https://wa.me/573203259834" target="_blank" class="btn-primary" style="display:inline-block">Hablar
+                con nosotras</a>
+        </div>
+        <div class="editorial-visual">💙</div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="features">
+        <div class="feature-item reveal">
+            <div class="feature-icon">🚚</div>
+            <div class="feature-title">Envío a Colombia</div>
+            <div class="feature-text">Todas las ciudades. Express en Villavicencio.</div>
+        </div>
+        <div class="feature-item reveal">
+            <div class="feature-icon">✅</div>
+            <div class="feature-title">Calidad Garantizada</div>
+            <div class="feature-text">Materiales premium. Garantía en cada producto.</div>
+        </div>
+        <div class="feature-item reveal">
+            <div class="feature-icon">💬</div>
+            <div class="feature-title">Asesoría Personalizada</div>
+            <div class="feature-text">Te ayudamos a elegir el regalo o accesorio perfecto.</div>
+        </div>
+        <div class="feature-item reveal">
+            <div class="feature-icon">📦</div>
+            <div class="feature-title">Empaque Especial</div>
+            <div class="feature-text">Cada pedido en caja de regalo lista para entregar.</div>
         </div>
     </div>
-    -->
-
-    <!-- WHY US -->
-    <section class="why" id="nosotros">
-        <div class="why__content">
-            <span class="section-label reveal">// 03 — Nuestra promesa</span>
-            <h2 class="section-title reveal">¿POR QUÉ<br>CLOUDKINGZ?</h2>
-            <div class="why__features">
-                <div class="why-item reveal">
-                    <div class="why-item__num">01</div>
-                    <div class="why-item__body">
-                        <div class="why-item__title">Calidad Certificada</div>
-                        <div class="why-item__text">Todos nuestros productos son testeados. Pureza real, sin cortes ni
-                            aditivos dañinos.</div>
-                    </div>
-                </div>
-                <div class="why-item reveal">
-                    <div class="why-item__num">02</div>
-                    <div class="why-item__body">
-                        <div class="why-item__title">Envío Discreto</div>
-                        <div class="why-item__text">Empaque neutro. Entrega en 24–48h en toda Bogotá y Colombia.</div>
-                    </div>
-                </div>
-                <div class="why-item reveal">
-                    <div class="why-item__num">03</div>
-                    <div class="why-item__body">
-                        <div class="why-item__title">Atención por WhatsApp</div>
-                        <div class="why-item__text">Te ayudamos a elegir el producto ideal para tu experiencia y
-                            tolerancia.</div>
-                    </div>
-                </div>
-                <div class="why-item reveal">
-                    <div class="why-item__num">04</div>
-                    <div class="why-item__body">
-                        <div class="why-item__title">100% Colombiano</div>
-                        <div class="why-item__text">Operamos desde Colombia, conocemos el mercado y entendemos lo que
-                            necesitas.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="why__visual reveal">
-            <!-- Puedes poner imagen aquí: -->
-            <!-- <img src="img/why-us.jpg" alt="CLOUDKINGZ Premium" class="why__img"> -->
-            <div class="why__visual-placeholder">
-                <div class="why__ring why__ring--1"></div>
-                <div class="why__ring why__ring--2"></div>
-                <div class="why__glow"></div>
-                <div class="why__hex">🌿</div>
-            </div>
-        </div>
-    </section>
 
     <!-- TESTIMONIALS -->
     <section class="testimonials" id="reviews">
-        <div class="testimonials__header reveal">
-            <span class="section-label">// 04 — Comunidad</span>
-            <h2 class="section-title">LO QUE DICEN<br>LOS REYES</h2>
+        <div class="testi-header reveal">
+            <div class="section-eyebrow" style="justify-content:center">Comunidad CELESTE</div>
+            <h2 class="section-title-serif">Lo que dicen<br><em>nuestras clientas</em></h2>
         </div>
-        <div class="testimonials__grid">
+        <div class="testi-grid">
             <div class="testi-card reveal">
-                <div class="testi-card__stars">★★★★★</div>
-                <div class="testi-card__text">"El Live Resin de Blue Dream es lo mejor que he probado. Sabor increíble y
-                    efecto inmediato. Pedido #3 y no paro."</div>
-                <div class="testi-card__author">— @kingblazer420</div>
+                <div class="testi-verified">✦ Verificada</div>
+                <div class="testi-stars">★★★★★</div>
+                <div class="testi-text">"La cadena fígaro es hermosa, la calidad es increíble para el precio. Ya pedí
+                    los aretes a juego."</div>
+                <div class="testi-author">— @vale.estilocol</div>
             </div>
             <div class="testi-card reveal">
-                <div class="testi-card__stars">★★★★★</div>
-                <div class="testi-card__text">"Llegó súper discreto y rápido. La batería Stealth es perfecta para salir.
-                    Ya le recomendé a 3 amigos."</div>
-                <div class="testi-card__author">— @smokequeenco</div>
+                <div class="testi-verified">✦ Verificada</div>
+                <div class="testi-stars">★★★★★</div>
+                <div class="testi-text">"El reloj llegó en una caja preciosa, fue un regalo para mi mamá y quedó
+                    enamorada. Servicio 10/10."</div>
+                <div class="testi-author">— @daniela.moda</div>
             </div>
             <div class="testi-card reveal">
-                <div class="testi-card__stars">★★★★★</div>
-                <div class="testi-card__text">"El OG Kush al 91% me sorprendió. Terpenos reales, no el sabor artificial
-                    de otras marcas. Calidad real."</div>
-                <div class="testi-card__author">— @terpenehunter</div>
+                <div class="testi-verified">✦ Verificada</div>
+                <div class="testi-stars">★★★★★</div>
+                <div class="testi-text">"Las pulseras son exactamente como en las fotos, muy finas y elegantes. Envío
+                    rapidísimo desde Villavicencio."</div>
+                <div class="testi-author">— @sofi.trendy</div>
             </div>
         </div>
     </section>
 
-    <!-- CTA / WHATSAPP -->
+    <!-- CTA -->
     <section class="cta-section">
-        <div class="cta-section__bg"></div>
-        <div class="cta-section__content reveal">
-            <h2 class="cta-section__title">ÚNETE A<br>LA <span>NUBE</span></h2>
-            <p class="cta-section__sub">Recibe drops exclusivos, descuentos y novedades directo a tu WhatsApp.</p>
-            <a href="https://wa.me/573158170584" target="_blank" class="btn-wa-big">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <div class="cta-left reveal">
+            <div class="section-eyebrow">Contáctanos</div>
+            <h2 class="section-title-serif">¿Lista para<br><em>brillar?</em></h2>
+            <p class="cta-text">Escríbenos por WhatsApp, te ayudamos a encontrar la pieza perfecta para ti o para
+                regalar. Atención personalizada de lunes a sábado.</p>
+            <a href="https://wa.me/573203259834" target="_blank" class="wa-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                     <path
                         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
-                Chatear en WhatsApp
+                Chatear ahora
             </a>
+        </div>
+        <div class="cta-right reveal">
+            <div class="cta-mosaic">
+                <div class="cta-tile">📿</div>
+                <div class="cta-tile">💎</div>
+                <div class="cta-tile">✨</div>
+                <div class="cta-tile">💍</div>
+            </div>
+            <div class="cta-tile wide">⌚</div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer__top">
-            <div class="footer__brand">
-                <a href="#" class="nav__logo">CLOUD<span>KINGZ</span></a>
-                <p>Vape THC premium con calidad certificada. Discreción total, sabor real, experiencia de otro nivel.
-                    Colombia 🇨🇴</p>
-                <div class="footer__social">
-                    <a href="https://wa.me/573158170584" target="_blank" title="WhatsApp">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <span class="brand-name">CELES<span>TE</span></span>
+                <p>Accesorios de mujer con estilo y calidad. Cadenas, aretes, pulseras, relojes y más. Con amor desde
+                    Villavicencio para toda Colombia 🇨🇴</p>
+                <div class="footer-social">
+                    <a href="https://wa.me/573203259834" target="_blank" title="WhatsApp">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                         </svg>
                     </a>
-                    <a href="#" title="Instagram">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <a href="#" title="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                        </svg>
-                    </a>
-                    <a href="#" title="Telegram">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        </svg></a>
+                    <a href="#" title="TikTok"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                             <path
-                                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-                        </svg>
-                    </a>
+                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z" />
+                        </svg></a>
                 </div>
             </div>
-            <div class="footer__col">
-                <h4>Productos</h4>
+            <div class="footer-col">
+                <h4>Colección</h4>
                 <ul>
-                    <li><a href="#">Cartuchos</a></li>
-                    <li><a href="#">Baterías</a></li>
-                    <li><a href="#">Desechables</a></li>
-                    <li><a href="#">Pods</a></li>
-                    <li><a href="#">Combos</a></li>
+                    <li><a href="#categorias">Cadenas</a></li>
+                    <li><a href="#categorias">Aretes</a></li>
+                    <li><a href="#categorias">Pulseras</a></li>
+                    <li><a href="#categorias">Relojes</a></li>
+                    <li><a href="#categorias">Anillos</a></li>
+                    <li><a href="#categorias">Conjuntos</a></li>
                 </ul>
             </div>
-            <div class="footer__col">
-                <h4>Info</h4>
+            <div class="footer-col">
+                <h4>Información</h4>
                 <ul>
-                    <li><a href="#">Cómo ordenar</a></li>
-                    <li><a href="#">Envíos</a></li>
-                    <li><a href="#">Garantía</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="https://wa.me/573203259834" target="_blank">Cómo comprar</a></li>
+                    <li><a href="https://wa.me/573203259834" target="_blank">Envíos</a></li>
+                    <li><a href="https://wa.me/573203259834" target="_blank">Garantía</a></li>
+                    <li><a href="https://wa.me/573203259834" target="_blank">Cambios</a></li>
+                    <li><a href="https://wa.me/573203259834" target="_blank">FAQ</a></li>
                 </ul>
             </div>
-            <div class="footer__col">
+            <div class="footer-col">
                 <h4>Contacto</h4>
                 <ul>
-                    <li><a href="https://wa.me/573000000000" target="_blank">WhatsApp</a></li>
+                    <li><a href="https://wa.me/573203259834" target="_blank">WhatsApp</a></li>
                     <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">TikTok</a></li>
+                    <li><a href="https://wa.me/573203259834" target="_blank">Pedidos</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer__bottom">
-            <div class="footer__copy">© 2025 CLOUDKINGZ — COLOMBIA 🇨🇴</div>
-            <div class="footer__disclaimer">+18. El consumo de THC puede ser ilegal en algunas regiones del pais. Consulta las
-                leyes de tu región.</div>
+        <div class="footer-bottom">
+            <div class="footer-copy">© 2025 CELESTE — Villavicencio, Colombia 🇨🇴</div>
+            <div class="footer-cards">
+                <div class="footer-card">Nequi</div>
+                <div class="footer-card">Daviplata</div>
+                <div class="footer-card">Bancolombia</div>
+                <div class="footer-card">Efectivo</div>
+            </div>
         </div>
     </footer>
 
-    <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/573158170584" target="_blank" class="wa-float" title="Pedir por WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <!-- WA FLOAT -->
+    <a href="https://wa.me/573203259834" target="_blank" class="wa-float" title="Pedir por WhatsApp">
+        <div class="wa-float-ping"></div>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
     </a>
 
-    <script src="main.js"></script>
+    <script>
+        const WA = '573203259834';
+
+        // ---- PRODUCTOS ----
+        const products = [
+            { id: 1, name: 'Cadena Fígaro Dorada 18K', brand: 'Cadenas', cat: 'Cadenas', price: 89000, badge: 'hot', badgeText: '🔥 Top', icon: '📿' },
+            { id: 2, name: 'Aretes Gota de Cristal', brand: 'Aretes', cat: 'Aretes', price: 45000, badge: 'new', badgeText: '✦ Nuevo', icon: '💎' },
+            { id: 3, name: 'Reloj Elegance Rose Gold', brand: 'Relojes', cat: 'Relojes', price: 176000, oldPrice: 220000, badge: 'sale', badgeText: '−20%', icon: '⌚' },
+            { id: 4, name: 'Pulsera Bangle Dorada', brand: 'Pulseras', cat: 'Pulseras', price: 55000, badge: '', badgeText: '', icon: '✨' },
+            { id: 5, name: 'Anillo Vintage Plata 925', brand: 'Anillos', cat: 'Anillos', price: 62000, badge: 'new', badgeText: '✦ Nuevo', icon: '💍' },
+            { id: 6, name: 'Conjunto Cadena + Aretes Perla', brand: 'Conjuntos', cat: 'Cadenas', price: 115000, badge: 'hot', badgeText: '🔥 Top', icon: '🪙' },
+            { id: 7, name: 'Cadena Serpiente Plata', brand: 'Cadenas', cat: 'Cadenas', price: 66000, oldPrice: 78000, badge: 'sale', badgeText: '−15%', icon: '📿' },
+            { id: 8, name: 'Reloj Minimalista Negro', brand: 'Relojes', cat: 'Relojes', price: 195000, badge: '', badgeText: '', icon: '⌚' },
+        ];
+
+        let currentFilter = 'Todos';
+        let cart = {};
+
+        function fmtPrice(n) { return '$' + n.toLocaleString('es-CO') }
+
+        function renderProducts(cat) {
+            const grid = document.getElementById('productsGrid');
+            const filtered = cat === 'Todos' ? products : products.filter(p => p.cat === cat);
+            grid.innerHTML = filtered.map(p => `
+    <div class="prod-card reveal">
+      <div class="prod-card__img-wrap">${p.icon}
+        ${p.badge ? `<span class="prod-card__badge badge-${p.badge}">${p.badgeText}</span>` : ''}
+        <button class="prod-card__add" onclick="addToCart(${p.id})">+ Agregar al pedido</button>
+      </div>
+      <div class="prod-card__brand">${p.brand}</div>
+      <div class="prod-card__name">${p.name}</div>
+      <div class="prod-card__footer">
+        <div class="prod-card__price">${p.oldPrice ? `<s>${fmtPrice(p.oldPrice)}</s> ` : ''} ${fmtPrice(p.price)}</div>
+        <button class="prod-card__wishlist" onclick="addToCart(${p.id})" title="Agregar">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </button>
+      </div>
+    </div>
+  `).join('');
+            // re-observe reveals
+            grid.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+        }
+
+        function filterProducts(cat, btn) {
+            currentFilter = cat;
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            else {
+                const target = document.querySelector(`[data-cat="${cat}"]`);
+                if (target) { document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active')); target.classList.add('active'); }
+            }
+            renderProducts(cat);
+            document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ---- CARRITO ----
+        function addToCart(id) {
+            const p = products.find(x => x.id === id);
+            if (!p) return;
+            if (cart[id]) { cart[id].qty++; } else { cart[id] = { ...p, qty: 1 }; }
+            updateCartUI();
+            showToast('✓ ' + p.name + ' agregado');
+        }
+
+        function removeFromCart(id) {
+            delete cart[id];
+            updateCartUI();
+            renderCartItems();
+        }
+
+        function changeQty(id, delta) {
+            if (!cart[id]) return;
+            cart[id].qty += delta;
+            if (cart[id].qty <= 0) delete cart[id];
+            updateCartUI();
+            renderCartItems();
+        }
+
+        function clearCart() {
+            cart = {};
+            updateCartUI();
+            renderCartItems();
+        }
+
+        function updateCartUI() {
+            const total = Object.values(cart).reduce((s, i) => s + i.price * i.qty, 0);
+            const count = Object.values(cart).reduce((s, i) => s + i.qty, 0);
+            const countEl = document.getElementById('cartCount');
+            countEl.textContent = count;
+            count > 0 ? countEl.classList.add('show') : countEl.classList.remove('show');
+            document.getElementById('cartTotal').textContent = fmtPrice(total);
+            const hasItems = count > 0;
+            document.getElementById('cartFooter').style.display = hasItems ? 'block' : 'none';
+            document.getElementById('cartEmpty').style.display = hasItems ? 'none' : 'block';
+            document.getElementById('cartNoteArea').style.display = hasItems ? 'block' : 'none';
+        }
+
+        function renderCartItems() {
+            const el = document.getElementById('cartItems');
+            const items = Object.values(cart);
+            el.innerHTML = items.map(i => `
+    <div class="cart-item">
+      <div class="cart-item-icon">${i.icon}</div>
+      <div class="cart-item-info">
+        <div class="cart-item-brand">${i.brand}</div>
+        <div class="cart-item-name">${i.name}</div>
+        <div class="cart-item-controls">
+          <button class="qty-btn" onclick="changeQty(${i.id},-1)">−</button>
+          <span class="qty-num">${i.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${i.id},1)">+</button>
+        </div>
+      </div>
+      <div class="cart-item-price">${fmtPrice(i.price * i.qty)}</div>
+      <button class="cart-item-remove" onclick="removeFromCart(${i.id})" title="Quitar">✕</button>
+    </div>
+  `).join('');
+            updateCartUI();
+        }
+
+        function toggleCart() {
+            const panel = document.getElementById('cartPanel');
+            const overlay = document.getElementById('cartOverlay');
+            const isOpen = panel.classList.contains('open');
+            if (!isOpen) renderCartItems();
+            panel.classList.toggle('open');
+            overlay.classList.toggle('open');
+            document.body.style.overflow = isOpen ? '' : 'hidden';
+        }
+
+        function sendToWhatsApp() {
+            const items = Object.values(cart);
+            if (items.length === 0) return;
+            const note = document.getElementById('cartNote').value.trim();
+            const lines = items.map(i => `• ${i.qty}x ${i.name} — ${fmtPrice(i.price * i.qty)}`);
+            const total = items.reduce((s, i) => s + i.price * i.qty, 0);
+            let msg = `¡Hola CELESTE! 👋 Quiero hacer el siguiente pedido:\n\n${lines.join('\n')}\n\n*Total estimado: ${fmtPrice(total)}*`;
+            if (note) msg += `\n\n📝 Nota: ${note}`;
+            msg += '\n\n¿Me confirmas disponibilidad y envío? 🙏';
+            window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // ---- TOAST ----
+        let toastTimer;
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
+        }
+
+        // ---- NAV ----
+        window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', scrollY > 40));
+        const ham = document.getElementById('hamburger'), mob = document.getElementById('mobileMenu');
+        ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open') });
+        function closeMobileMenu() { ham.classList.remove('open'); mob.classList.remove('open') }
+
+        // ---- REVEAL ----
+        const obs = new IntersectionObserver(entries => entries.forEach((e, i) => {
+            if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 60);
+        }), { threshold: .08 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        // ---- INIT ----
+        renderProducts('Todos');
+    </script>
 </body>
 
 </html>
