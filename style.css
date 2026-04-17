@@ -93,7 +93,7 @@ button { cursor: pointer; font-family: var(--ff-sans); border: none; background:
 }
 #nav.scrolled { border-color: var(--border); box-shadow: 0 2px 24px rgba(14,12,10,.06); }
 
-.nav-logo { font-family: var(--ff-serif); font-size: 22px; font-weight: 600; letter-spacing: .12em; color: var(--dark); }
+.nav-logo { font-family: var(--ff-serif); font-size: 60px; font-weight: 600; letter-spacing: .12em; color: var(--dark); }
 .nav-logo span { color: var(--gold); }
 
 .nav-links { display: flex; list-style: none; gap: 32px; }
