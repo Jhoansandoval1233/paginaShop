@@ -1467,7 +1467,6 @@ button {
     margin-top: 12px;
 }
 
-/* Rating summary */
 .rating-summary {
     display: flex;
     gap: 48px;
@@ -1674,7 +1673,7 @@ button {
 }
 
 /* ════════════════════════════════════════════
-   FORMULARIO DE RESEÑA (NUEVO)
+   FORMULARIO DE RESEÑA
 ════════════════════════════════════════════ */
 .review-form-section {
     background: var(--white);
@@ -1780,7 +1779,6 @@ button {
     right: 0;
 }
 
-/* Star picker */
 .star-picker {
     display: flex;
     gap: 6px;
@@ -1840,7 +1838,6 @@ button {
     white-space: nowrap;
 }
 
-/* Success state */
 .review-success {
     text-align: center;
     padding: 48px 32px;
@@ -2220,8 +2217,31 @@ footer {
         margin-right: auto;
     }
 
+    /* ── ÚNICO CAMBIO: hero-right visible en móvil ── */
     .hero-right {
-        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 280px;
+    }
+
+    .hero-img-placeholder {
+        width: 220px;
+        height: 260px;
+    }
+
+    .hero-badge {
+        left: auto;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .hero-urgency {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
+        font-size: 11px;
     }
 
     .cat-grid {
