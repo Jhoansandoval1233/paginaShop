@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CELESTE ·Accesorios · Villavicencio</title>
+    <title>Oasis Campestre JC · Restaurante & Balneario</title>
     <meta name="description"
-        content="Cadenas, aretes, pulseras y relojes seleccionados para la mujer que lleva el estilo en cada detalle. Envíos a toda Colombia desde Villavicencio.">
+        content="Restaurante y balneario campestre. Comida típica, pescados, carnes a la parrilla, piscinas y diversión para toda la familia. Reserva por WhatsApp.">
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -25,37 +25,37 @@
                     <line x1="3" y1="6" x2="21" y2="6" />
                     <path d="M16 10a4 4 0 01-8 0" />
                 </svg>
-                Tu pedido
+                Mi Pedido
             </div>
             <button class="cart-close" onclick="toggleCart()">✕</button>
         </div>
         <div class="cart-body" id="cartBody">
             <div class="cart-empty" id="cartEmpty">
-                <div class="cart-empty-icon">🛍️</div>
-                <p>Tu carrito está vacío</p>
-                <p class="cart-empty-sub">Agrega productos para hacer tu pedido</p>
+                <div class="cart-empty-icon">🍽️</div>
+                <p>Tu pedido está vacío</p>
+                <p class="cart-empty-sub">Agrega platos del menú para armar tu pedido</p>
             </div>
             <div id="cartItems"></div>
             <div class="cart-note-area" id="cartNoteArea" style="display:none">
-                <label class="cart-note-label">Nota para tu pedido (opcional)</label>
+                <label class="cart-note-label">Agregar observaciones (opcional)</label>
                 <textarea class="cart-note-input" id="cartNote"
-                    placeholder="Ej: talla, color preferido, es un regalo..."></textarea>
+                    placeholder="Ej: sin picante, para llevar, mesa para 6 personas..."></textarea>
             </div>
         </div>
         <div class="cart-footer" id="cartFooter" style="display:none">
             <div class="cart-total-row">
-                <span class="cart-total-label">Total estimado</span>
+                <span class="cart-total-label">Total del Pedido</span>
                 <span class="cart-total-price" id="cartTotal">$0</span>
             </div>
-            <div class="cart-shipping">🚚 Envío a Villavicencio y toda Colombia</div>
+            <div class="cart-shipping">🌴 Oasis Campestre JC · Restaurante & Balneario</div>
             <a href="#" class="btn-whatsapp" id="waOrderBtn" onclick="sendToWhatsApp(); return false;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                     <path
                         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
-                Enviar pedido por WhatsApp
+                Confirmar Pedido por WhatsApp
             </a>
-            <button class="btn-clear" onclick="clearCart()">Vaciar carrito</button>
+            <button class="btn-clear" onclick="clearCart()">Vaciar pedido</button>
         </div>
     </div>
 
@@ -63,37 +63,42 @@
 
     <div class="announce-bar">
         <div class="announce-track">
-            <span>🚚 Envío gratis hoy a Villavicencio</span>
+            <span>🌴 Bienvenido a Oasis Campestre JC</span>
             <span class="announce-sep">◆</span>
-            <span>✨ Nueva colección 2026 disponible</span>
+            <span>🍹bebidas refrescantes</span>
             <span class="announce-sep">◆</span>
-            <span>💳 Nequi · Daviplata · Bancolombia</span>
+            <span>🏊 Piscinas para toda la familia</span>
             <span class="announce-sep">◆</span>
-            <span>🚚 Envío gratis hoy a Villavicencio</span>
+            <span>🍽️ Restaurante Campestre</span>
             <span class="announce-sep">◆</span>
-            <span>✨ Nueva colección 2026 disponible</span>
+            <span>🎉 Eventos y celebraciones</span>
             <span class="announce-sep">◆</span>
-            <span>💳 Nequi · Daviplata · Bancolombia</span>
+            <span>🌴 Bienvenido a Oasis Campestre JC</span>
+            <span class="announce-sep">◆</span>
+            <span>🍹bebidas refrescantes</span>
+            <span class="announce-sep">◆</span>
+            <span>🏊 Piscinas para toda la familia</span>
             <span class="announce-sep">◆</span>
         </div>
     </div>
 
     <nav id="nav">
-        <a href="#" class="nav-logo">CELES<span>TE</span></a>
+        <a href="#" class="nav-logo">OASIS<span> JC</span></a>
         <ul class="nav-links">
-            <li><a href="#categorias">Categorías</a></li>
-            <li><a href="#productos">Colección</a></li>
-            <li><a href="#nosotros">Nosotras</a></li>
-            <li><a href="#reviews">Reseñas</a></li>
-            <li><a href="#escribir-resena">Opinar</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#menu">Menú</a></li>
+            <li><a href="#especialidades">Especialidades</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
         <div class="nav-right">
-            <a href="https://wa.me/573203259834" target="_blank" class="nav-wa">
+            <a href="https://wa.me/573213614370" target="_blank" class="nav-wa nav-wa--reservar">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="#25d366">
                     <path
                         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
-                WhatsApp
+                Reservar
             </a>
             <button class="btn-cart" onclick="toggleCart()">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -101,7 +106,7 @@
                     <line x1="3" y1="6" x2="21" y2="6" />
                     <path d="M16 10a4 4 0 01-8 0" />
                 </svg>
-                Mi pedido
+                Mi Pedido
                 <span class="cart-count" id="cartCount">0</span>
             </button>
             <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
@@ -110,180 +115,186 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="#categorias" onclick="closeMobileMenu()">Categorías</a></li>
-            <li><a href="#productos" onclick="closeMobileMenu()">Colección</a></li>
-            <li><a href="#nosotros" onclick="closeMobileMenu()">Nosotras</a></li>
-            <li><a href="#reviews" onclick="closeMobileMenu()">Reseñas</a></li>
-            <li><a href="#escribir-resena" onclick="closeMobileMenu()">✍️ Dejar reseña</a></li>
-            <li><a href="https://wa.me/573203259834" target="_blank">💬 WhatsApp →</a></li>
+            <li><a href="#inicio" onclick="closeMobileMenu()">Inicio</a></li>
+            <li><a href="#menu" onclick="closeMobileMenu()">Menú</a></li>
+            <li><a href="#especialidades" onclick="closeMobileMenu()">Especialidades</a></li>
+            <li><a href="#galeria" onclick="closeMobileMenu()">Galería</a></li>
+            <li><a href="#nosotros" onclick="closeMobileMenu()">Nosotros</a></li>
+            <li><a href="#contacto" onclick="closeMobileMenu()">Contacto</a></li>
+            <li><a href="https://wa.me/573213614370" target="_blank">📲 Reservar →</a></li>
         </ul>
     </div>
 
-    <section class="hero">
+    <section class="hero" id="inicio">
+        <div class="hero-bg-decor" aria-hidden="true"></div>
         <div class="hero-left">
-            <div class="hero-tag">Nueva Colección 2026</div>
+            <div class="hero-tag">Restaurante & Balneario</div>
             <h1>
-                Accesorios<br>
-                <em>que habla</em><br>
-                <strong>por ti</strong>
+                Oasis<br>
+                <em>Campestre</em><br>
+                <strong>JC</strong>
             </h1>
             <p class="hero-sub">
-                Cadenas, aretes, pulseras y relojes seleccionados para la mujer que lleva el estilo en cada detalle.<br>
-                <span class="hero-sub-highlight">📍 Villavicencio, Meta · 🚚 Envíos a todo Colombia</span>
+                Disfruta de una experiencia única con deliciosa comida típica, pescados, carnes a la parrilla,
+                bebidas refrescantes y un ambiente lleno de piscinas, naturaleza y diversión para toda la familia.<br>
+                <span class="hero-sub-highlight">🌴 Sabor, Sol y Diversión en un Solo Lugar</span>
             </p>
             <div class="hero-btns">
-                <a href="#productos" class="btn-primary btn-primary--cta">
+                <a href="#menu" class="btn-primary btn-primary--cta">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
                         <line x1="3" y1="6" x2="21" y2="6" />
                         <path d="M16 10a4 4 0 01-8 0" />
                     </svg>
-                    Comprar ahora
+                    🍽️ Ver Menú
                 </a>
-                <a href="https://wa.me/573203259834" target="_blank" class="btn-outline">Pedir por WhatsApp</a>
+                <a href="https://wa.me/573213614370" target="_blank" class="btn-outline">📲 Reservar por WhatsApp</a>
             </div>
             <div class="hero-trust">
                 <div class="trust-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    Calidad garantizada
+                    Ingredientes frescos
                 </div>
                 <div class="trust-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="1" y="4" width="22" height="16" rx="2" />
                         <line x1="1" y1="10" x2="23" y2="10" />
                     </svg>
-                    pagos en efectivo y transferencias
+                    Efectivo y transferencias
                 </div>
                 <div class="trust-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
                         <circle cx="12" cy="10" r="3" />
                     </svg>
-                    Villavicencio
+                    Zona campestre
                 </div>
             </div>
         </div>
         <div class="hero-right">
             <div class="hero-right-inner">
-                <div class="hero-ornament">◆</div>
+                <div class="hero-ornament">🌴</div>
                 <div class="hero-img-placeholder">
-                    <img src="img/hero.jpeg" alt="Accesorios CELESTE" class="hero-img"
+                    <img src="img/FotoPortada.jpeg" alt="Familia disfrutando la piscina en Oasis Campestre JC" class="hero-img"
                         onerror="this.style.display='none';this.parentElement.querySelector('.hero-fallback').style.display='flex'">
-                    <div class="hero-fallback"></div>
+                    
                 </div>
             </div>
             <div class="hero-badge">
-                <div class="hero-badge-text">✦ envíos<br>a toda<br>colombia ✦</div>
+                <div class="hero-badge-text">✦ familia<br>diversión<br>sabor ✦</div>
             </div>
-            <div class="hero-urgency">🔥 <strong>+200 pedidos</strong> este mes</div>
+            <div class="hero-urgency">🎉 <strong>Abierto todos los días</strong></div>
+        </div>
+        <div class="hero-wave" aria-hidden="true">
+            <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+                <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,90 1440,40 L1440,90 L0,90 Z"></path>
+            </svg>
         </div>
     </section>
 
     <div class="marquee-bar">
         <div class="marquee-track">
-            <span class="marquee-item">Cadenas<span class="marquee-dot"></span></span>
-            <span class="marquee-item">collares<span class="marquee-dot"></span></span>
-            <span class="marquee-item"><em>Aretes</em> <span class="marquee-dot"></span></span>
-            <span class="marquee-item"><em>pendientes</em> <span class="marquee-dot"></span></span>
-            <span class="marquee-item">Pulseras<span class="marquee-dot"></span></span>
-            <span class="marquee-item">esclavas<span class="marquee-dot"></span></span>
-            <span class="marquee-item"><em>Relojes</em> <span class="marquee-dot"></span></span>
-            <span class="marquee-item">Anillos<span class="marquee-dot"></span></span>
-            <span class="marquee-item"><em>Villavicencio</em> <span class="marquee-dot"></span></span>
-            <span class="marquee-item">Cadenas<span class="marquee-dot"></span></span>
-            <span class="marquee-item">collares<span class="marquee-dot"></span></span>
-            <span class="marquee-item"><em>Aretes</em> <span class="marquee-dot"></span></span>
-            <span class="marquee-item"><em>pendientes</em> <span class="marquee-dot"></span></span>
-            <span class="marquee-item">Pulseras<span class="marquee-dot"></span></span>
-            <span class="marquee-item">esclavas<span class="marquee-dot"></span></span>
-            <span class="marquee-item"><em>Relojes</em> <span class="marquee-dot"></span></span>
-            <span class="marquee-item">Anillos<span class="marquee-dot"></span></span>
-            <span class="marquee-item"><em>Villavicencio</em> <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Carnes a la Llanera<span class="marquee-dot"></span></span>
+            <span class="marquee-item"><em>Mojarra-Cachama</em> <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Platos Típicos<span class="marquee-dot"></span></span>
+            <span class="marquee-item"><em>Servicio de Bar</em> <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Piscinas<span class="marquee-dot"></span></span>
+            <span class="marquee-item"><em>Eventos</em> <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Naturaleza<span class="marquee-dot"></span></span>
+            <span class="marquee-item">Carnes a la Parrilla<span class="marquee-dot"></span></span>
+            <span class="marquee-item"><em>Mojarra-Cachama</em> <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Platos Típicos<span class="marquee-dot"></span></span>
+            <span class="marquee-item"><em>Servicio de Bar</em> <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Piscinas<span class="marquee-dot"></span></span>
+            <span class="marquee-item"><em>Eventos</em> <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Naturaleza<span class="marquee-dot"></span></span>
         </div>
     </div>
 
     <div class="trust-bar">
         <div class="trust-item reveal">
-            <div class="trust-icon">🚚</div>
-            <div class="trust-info"><strong>Envío Express</strong><span>24h en Villavicencio</span></div>
+            <div class="trust-icon">🏊</div>
+            <div class="trust-info"><strong>Piscinas Familiares</strong><span>Para grandes y chicos</span></div>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-item reveal">
-            <div class="trust-icon">✅</div>
-            <div class="trust-info"><strong>Calidad Garantizada</strong><span>Materiales premium</span></div>
+            <div class="trust-icon">🔥</div>
+            <div class="trust-info"><strong>A la Llanera</strong><span>Carnes y pescados frescos</span></div>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-item reveal">
             <div class="trust-icon">💬</div>
-            <div class="trust-info"><strong>Atención Personalizada</strong><span>Lun–Sáb por WhatsApp</span></div>
+            <div class="trust-info"><strong>Reservas Fáciles</strong><span>Todos los días por WhatsApp</span></div>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-item reveal">
-            <div class="trust-icon">📦</div>
-            <div class="trust-info"><strong>Empaque de Regalo</strong><span>Listo para entregar</span></div>
+            <div class="trust-icon">🎉</div>
+            <div class="trust-info"><strong>Eventos y Celebraciones</strong><span>Cumpleaños y reuniones</span></div>
         </div>
     </div>
 
-    <section class="categories" id="categorias">
+    <section class="categories" id="especialidades">
         <div class="section-header reveal">
-            <div class="section-eyebrow">Línea completa</div>
-            <h2 class="section-title-serif">Explora la colección<br><em> que tenemos para ti</em></h2>
+            <div class="section-eyebrow">Nuestras especialidades</div>
+            <h2 class="section-title-serif">Sabores que<br><em>enamoran</em></h2>
         </div>
         <div class="cat-grid">
-            <div class="cat-item cat-item--large reveal" onclick="filterProducts('Cadenas')">
-                <div class="cat-img-area cat-img-area--cadenas">
-                    <img src="img/cadena01.jpeg" alt="Cadenas" class="cat-bg-img" onerror="this.style.display='none'">
-                    <span class="cat-fallback"></span>
+            <div class="cat-item cat-item--large reveal" onclick="filterProducts('Carnes')">
+                <div class="cat-img-area cat-img-area--carnes">
+                    <img src="img/FotoCarneLlanera.jpeg" alt="Carnes" class="cat-bg-img"
+                        onerror="this.style.display='none'">
+                    <span class="cat-fallback">🍖</span>
                 </div>
                 <div class="cat-overlay">
-                    <div class="cat-name">Cadenas</div>
-                    <div class="cat-count" id="count-Cadenas">— productos</div>
+                    <div class="cat-name">🍖 Carnes a la Llanera</div>
+                    <div class="cat-count" id="count-Carnes">— platos</div>
                     <div class="cat-arrow">Ver todo →</div>
                 </div>
             </div>
-            <div class="cat-item reveal" onclick="filterProducts('Aretes')">
+            <div class="cat-item reveal" onclick="filterProducts('Pescados')">
                 <div class="cat-img-area">
-                    <img src="img/arete01.jpeg" alt="Aretes" class="cat-bg-img" onerror="this.style.display='none'">
-                    <span class="cat-fallback"></span>
+                    <img src="img/pescados.jpg" alt="Pescados" class="cat-bg-img" onerror="this.style.display='none'">
+                    <span class="cat-fallback">🐟</span>
                 </div>
                 <div class="cat-overlay">
-                    <div class="cat-name">Aretes</div>
-                    <div class="cat-count" id="count-Aretes">— productos</div>
+                    <div class="cat-name">🐟 Pescados</div>
+                    <div class="cat-count" id="count-Pescados">— platos</div>
                     <div class="cat-arrow">Ver todo →</div>
                 </div>
             </div>
-            <div class="cat-item reveal" onclick="filterProducts('Relojes')">
+            <div class="cat-item reveal" onclick="filterProducts('Pollo')">
                 <div class="cat-img-area">
-                    <img src="img/reloj02.jpeg" alt="Relojes" class="cat-bg-img" onerror="this.style.display='none'">
-                    <span class="cat-fallback"></span>
+                    <img src="img/pollo.jpg" alt="Pollo" class="cat-bg-img" onerror="this.style.display='none'">
+                    <span class="cat-fallback">🍗</span>
                 </div>
                 <div class="cat-overlay">
-                    <div class="cat-name">Relojes</div>
-                    <div class="cat-count" id="count-Relojes">— productos</div>
+                    <div class="cat-name">🍗 Pollo</div>
+                    <div class="cat-count" id="count-Pollo">— platos</div>
                     <div class="cat-arrow">Ver todo →</div>
                 </div>
             </div>
-            <div class="cat-item reveal" onclick="filterProducts('Pulseras')">
+            <div class="cat-item reveal" onclick="filterProducts('Típicos')">
                 <div class="cat-img-area">
-                    <img src="img/pulsera01.jpeg" alt="Pulseras" class="cat-bg-img" onerror="this.style.display='none'">
-                    <span class="cat-fallback"></span>
+                    <img src="img/tipicos.jpg" alt="Platos Típicos" class="cat-bg-img"
+                        onerror="this.style.display='none'">
+                    <span class="cat-fallback">🍛</span>
                 </div>
                 <div class="cat-overlay">
-                    <div class="cat-name">Pulseras</div>
-                    <div class="cat-count" id="count-Pulseras">— productos</div>
+                    <div class="cat-name">🍛 Platos Típicos</div>
+                    <div class="cat-count" id="count-Típicos">— platos</div>
                     <div class="cat-arrow">Ver todo →</div>
                 </div>
             </div>
-            <div class="cat-item reveal" onclick="filterProducts('Anillos')">
+            <div class="cat-item reveal" onclick="filterProducts('Bebidas')">
                 <div class="cat-img-area">
-                    <img src="img/anillo01.jpeg" alt="Anillos" class="cat-bg-img" onerror="this.style.display='none'">
-                    <span class="cat-fallback"></span>
+                    <img src="img/bebidas.jpg" alt="Bebidas" class="cat-bg-img" onerror="this.style.display='none'">
+                    <span class="cat-fallback">🥤</span>
                 </div>
                 <div class="cat-overlay">
-                    <div class="cat-name">Anillos</div>
-                    <div class="cat-count" id="count-Anillos">— productos</div>
+                    <div class="cat-name">🥤 Bebidas</div>
+                    <div class="cat-count" id="count-Bebidas">— platos</div>
                     <div class="cat-arrow">Ver todo →</div>
                 </div>
             </div>
@@ -292,36 +303,37 @@
 
     <div class="stats-row">
         <div class="stat-cell reveal">
-            <div class="stat-number">800<span>+</span></div>
-            <div class="stat-label">Clientas felices</div>
+            <div class="stat-number">15<span>+</span></div>
+            <div class="stat-label">Años de experiencia</div>
         </div>
         <div class="stat-cell reveal">
-            <div class="stat-number">90<span>+</span></div>
-            <div class="stat-label">Productos únicos</div>
+            <div class="stat-number">80<span>+</span></div>
+            <div class="stat-label">Platos disponibles</div>
         </div>
         <div class="stat-cell reveal">
-            <div class="stat-number">24<span>H</span></div>
-            <div class="stat-label">Envío express</div>
+            <div class="stat-number">5000<span>+</span></div>
+            <div class="stat-label">Clientes felices</div>
         </div>
         <div class="stat-cell reveal">
-            <div class="stat-number">5<span>★</span></div>
-            <div class="stat-label">Calificación media</div>
+            <div class="stat-number">100<span>%</span></div>
+            <div class="stat-label">Ingredientes frescos</div>
         </div>
     </div>
 
-    <section class="products" id="productos">
+    <section class="products" id="menu">
         <div class="products-header reveal">
             <div>
-                <div class="section-eyebrow">Más vendidos</div>
-                <h2 class="section-title-serif">Piezas<br><em>destacadas</em></h2>
+                <div class="section-eyebrow">Nuestro menú</div>
+                <h2 class="section-title-serif">Platos<br><em>destacados</em></h2>
             </div>
             <div class="filter-tabs" id="filterTabs">
                 <button class="filter-tab active" data-cat="Todos" onclick="filterProducts('Todos',this)">Todos</button>
-                <button class="filter-tab" data-cat="Cadenas" onclick="filterProducts('Cadenas',this)">Cadenas</button>
-                <button class="filter-tab" data-cat="Aretes" onclick="filterProducts('Aretes',this)">Aretes</button>
-                <button class="filter-tab" data-cat="Pulseras"
-                    onclick="filterProducts('Pulseras',this)">Pulseras</button>
-                <button class="filter-tab" data-cat="Relojes" onclick="filterProducts('Relojes',this)">Relojes</button>
+                <button class="filter-tab" data-cat="Carnes" onclick="filterProducts('Carnes',this)">Carnes</button>
+                <button class="filter-tab" data-cat="Pescados"
+                    onclick="filterProducts('Pescados',this)">Pescados</button>
+                <button class="filter-tab" data-cat="Pollo" onclick="filterProducts('Pollo',this)">Pollo</button>
+                <button class="filter-tab" data-cat="Típicos" onclick="filterProducts('Típicos',this)">Típicos</button>
+                <button class="filter-tab" data-cat="Bebidas" onclick="filterProducts('Bebidas',this)">Bebidas</button>
             </div>
         </div>
         <div class="products-grid" id="productsGrid"></div>
@@ -329,51 +341,91 @@
 
     <div class="editorial" id="nosotros">
         <div class="editorial-text">
-            <div class="editorial-eyebrow">Nuestra esencia · Villavicencio</div>
-            <h2 class="editorial-title">Cada pieza,<br>una <em>historia</em><br>que contar.</h2>
+            <div class="editorial-eyebrow">Nuestra esencia</div>
+            <h2 class="editorial-title">Nuestra<br><em>historia</em></h2>
             <p class="editorial-body">
-                Somos CELESTE, una tienda de accesorios femeninos nacida en Villavicencio, Meta - Colombia 🇨🇴.
-                Seleccionamos cada prenda pensando en la mujer que sabe lo que quiere: calidad real,
-                estilo propio y atención personalizada.
+                Oasis Campestre JC es un restaurante y balneario pensado para disfrutar en familia. Ofrecemos
+                gastronomía tradicional, piscinas, zonas verdes y un ambiente perfecto para descansar, celebrar
+                y compartir momentos inolvidables.
             </p>
             <div class="editorial-facts">
-                <div class="editorial-fact"><strong>📍</strong><span>Villavicencio, Meta</span></div>
-                <div class="editorial-fact"><strong>📲</strong><span>Atención por WhatsApp</span></div>
-                <div class="editorial-fact"><strong>🚚</strong><span>Envíos a toda Colombia</span></div>
+                <div class="editorial-fact"><strong>🌴</strong><span>Naturaleza</span></div>
+                <div class="editorial-fact"><strong>🏊</strong><span>Piscinas</span></div>
+                <div class="editorial-fact"><strong>🍽️</strong><span>Restaurante</span></div>
+                <div class="editorial-fact"><strong>🎉</strong><span>Eventos</span></div>
             </div>
-            <a href="https://wa.me/573203259834" target="_blank" class="btn-primary"
+            <a href="https://wa.me/573213614370" target="_blank" class="btn-primary"
                 style="display:inline-flex;align-items:center;gap:10px;margin-top:32px">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path
                         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
-                Hablar con nosotras
+                Hablar con nosotros
             </a>
         </div>
         <div class="editorial-visual">
-            <img src="img/nosotras.jpeg" alt="CELESTE Accesorios" class="editorial-img"
+            <img src="img/nosotros.jpg" alt="Oasis Campestre JC" class="editorial-img"
                 onerror="this.style.display='none'">
-            <span class="editorial-fallback"></span>
+            <span class="editorial-fallback">🌴</span>
         </div>
     </div>
 
+    <section class="gallery" id="galeria">
+        <div class="section-header reveal">
+            <div class="section-eyebrow">Vive la experiencia</div>
+            <h2 class="section-title-serif">Nuestra<br><em>galería</em></h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-item--tall reveal">
+                <img src="img/galeria-piscinas.jpg" alt="Piscinas" onerror="this.style.display='none'">
+                <span class="gallery-fallback">🏊</span>
+                <div class="gallery-label">Piscinas</div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="img/galeria-restaurante.jpg" alt="Restaurante" onerror="this.style.display='none'">
+                <span class="gallery-fallback">🍽️</span>
+                <div class="gallery-label">Restaurante</div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="img/galeria-comida.jpg" alt="Comida" onerror="this.style.display='none'">
+                <span class="gallery-fallback">🍖</span>
+                <div class="gallery-label">Comida</div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="img/galeria-ninos.jpg" alt="Niños jugando" onerror="this.style.display='none'">
+                <span class="gallery-fallback">🎈</span>
+                <div class="gallery-label">Niños</div>
+            </div>
+            <div class="gallery-item gallery-item--wide reveal">
+                <img src="img/galeria-eventos.jpg" alt="Eventos" onerror="this.style.display='none'">
+                <span class="gallery-fallback">🎉</span>
+                <div class="gallery-label">Eventos</div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="img/galeria-paisajes.jpg" alt="Paisajes campestres" onerror="this.style.display='none'">
+                <span class="gallery-fallback">🌴</span>
+                <div class="gallery-label">Paisajes</div>
+            </div>
+        </div>
+    </section>
+
     <section class="testimonials" id="reviews">
         <div class="testi-header reveal">
-            <div class="section-eyebrow" style="justify-content:center">Comunidad CELESTE</div>
-            <h2 class="section-title-serif">Lo que dicen<br><em>nuestras clientas</em></h2>
-            <p class="testi-subtitle">Más de 800 mujeres confían en nosotras ✨</p>
+            <div class="section-eyebrow" style="justify-content:center">Comunidad Oasis</div>
+            <h2 class="section-title-serif">Lo que dicen<br><em>nuestros clientes</em></h2>
+            <p class="testi-subtitle">Más de 5000 familias confían en nosotros ✨</p>
         </div>
         <div class="rating-summary reveal">
             <div class="rating-big">
                 <span class="rating-number" id="avgRating">5.0</span>
                 <div class="rating-stars-big">★★★★★</div>
-                <span class="rating-total" id="totalReviews">3 reseñas</span>
+                <span class="rating-total" id="totalReviews">4 reseñas</span>
             </div>
             <div class="rating-bars">
                 <div class="rating-bar-row"><span>5★</span>
                     <div class="rbar-track">
                         <div class="rbar-fill" id="bar5" style="width:100%"></div>
-                    </div><span id="cnt5">3</span>
+                    </div><span id="cnt5">4</span>
                 </div>
                 <div class="rating-bar-row"><span>4★</span>
                     <div class="rbar-track">
@@ -399,41 +451,50 @@
         </div>
         <div class="testi-grid" id="reviewsGrid">
             <div class="testi-card reveal">
-                <div class="testi-verified">✦ Verificada</div>
+                <div class="testi-verified">✦ Cliente verificado</div>
                 <div class="testi-stars">★★★★★</div>
-                <div class="testi-text">"La cadena fígaro es hermosa, la calidad es increíble para el precio. Ya pedí
-                    los aretes a juego. Sin duda mi tienda favorita."</div>
+                <div class="testi-text">"La comida estaba deliciosa y las piscinas muy limpias."</div>
                 <div class="testi-footer">
-                    <div class="testi-avatar">V</div>
+                    <div class="testi-avatar">M</div>
                     <div class="testi-author-info">
-                        <div class="testi-author">Valentina G.</div>
-                        <div class="testi-location">📍 Bogotá</div>
+                        <div class="testi-author">Marcela T.</div>
+                        <div class="testi-location">📍 Villavicencio</div>
                     </div>
                 </div>
             </div>
             <div class="testi-card testi-card--featured reveal">
-                <div class="testi-verified">✦ Verificada</div>
+                <div class="testi-verified">✦ Cliente verificado</div>
                 <div class="testi-stars">★★★★★</div>
-                <div class="testi-text">"El reloj llegó en una caja preciosa, fue un regalo para mi mamá y quedó
-                    enamorada. La atención por WhatsApp es increíble. 100% recomendada."</div>
+                <div class="testi-text">"Excelente atención y un lugar perfecto para pasar el fin de semana."</div>
                 <div class="testi-footer">
-                    <div class="testi-avatar">D</div>
+                    <div class="testi-avatar">J</div>
                     <div class="testi-author-info">
-                        <div class="testi-author">Daniela M.</div>
-                        <div class="testi-location">📍 Medellín</div>
+                        <div class="testi-author">Jorge L.</div>
+                        <div class="testi-location">📍 Bogotá</div>
                     </div>
                 </div>
             </div>
             <div class="testi-card reveal">
-                <div class="testi-verified">✦ Verificada</div>
+                <div class="testi-verified">✦ Cliente verificado</div>
                 <div class="testi-stars">★★★★★</div>
-                <div class="testi-text">"Las pulseras son exactamente como en las fotos, muy finas y elegantes. Envío
-                    rapidísimo desde Villavicencio. Ya voy por mi tercer pedido."</div>
+                <div class="testi-text">"Los pescados son espectaculares."</div>
                 <div class="testi-footer">
-                    <div class="testi-avatar">S</div>
+                    <div class="testi-avatar">C</div>
                     <div class="testi-author-info">
-                        <div class="testi-author">Sofía R.</div>
+                        <div class="testi-author">Carolina P.</div>
                         <div class="testi-location">📍 Villavicencio</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card reveal">
+                <div class="testi-verified">✦ Cliente verificado</div>
+                <div class="testi-stars">★★★★★</div>
+                <div class="testi-text">"Volveremos con toda la familia."</div>
+                <div class="testi-footer">
+                    <div class="testi-avatar">A</div>
+                    <div class="testi-author-info">
+                        <div class="testi-author">Andrés R.</div>
+                        <div class="testi-location">📍 Acacías</div>
                     </div>
                 </div>
             </div>
@@ -449,24 +510,24 @@
             <div class="review-form-head">
                 <div class="section-eyebrow" style="justify-content:center">Tu opinión importa</div>
                 <h2 class="section-title-serif" style="text-align:center">Comparte tu<br><em>experiencia</em></h2>
-                <p class="review-form-sub">¿Ya compraste con nosotras? Cuéntales a otras clientas cómo fue tu
-                    experiencia. Cada reseña ayuda a nuestra comunidad 💛</p>
+                <p class="review-form-sub">¿Ya nos visitaste? Cuéntales a otras familias cómo fue tu experiencia
+                    en Oasis Campestre JC 🌴</p>
             </div>
             <form class="review-form" id="reviewForm" onsubmit="submitReview(event)">
                 <div class="review-form-row">
                     <div class="review-form-group">
                         <label>Tu nombre *</label>
-                        <input type="text" id="reviewName" placeholder="Ej: María P." maxlength="40" required>
+                        <input type="text" id="reviewName" placeholder="Ej: Laura P." maxlength="40" required>
                     </div>
                     <div class="review-form-group">
                         <label>Ciudad</label>
-                        <input type="text" id="reviewCity" placeholder="Ej: Bogotá" maxlength="30">
+                        <input type="text" id="reviewCity" placeholder="Ej: Villavicencio" maxlength="30">
                     </div>
                 </div>
                 <div class="review-form-group">
-                    <label>Producto comprado (opcional)</label>
+                    <label>Plato favorito (opcional)</label>
                     <select id="reviewProduct">
-                        <option value="">— Selecciona un producto —</option>
+                        <option value="">— Selecciona un plato —</option>
                     </select>
                 </div>
                 <div class="review-form-group">
@@ -482,10 +543,10 @@
                     <span class="star-label" id="starLabel">Selecciona las estrellas</span>
                 </div>
                 <div class="review-form-group">
-                    <label>Tu reseña *</label>
+                    <label>Tu comentario *</label>
                     <textarea id="reviewText"
-                        placeholder="Cuéntanos cómo fue tu experiencia: calidad del producto, tiempo de envío, atención…"
-                        maxlength="400" rows="4" required></textarea>
+                        placeholder="Cuéntanos cómo fue tu experiencia: comida, piscinas, atención…" maxlength="400"
+                        rows="4" required></textarea>
                     <span class="char-count"><span id="charCount">0</span>/400</span>
                 </div>
                 <div class="review-form-footer">
@@ -495,22 +556,22 @@
                             <circle cx="12" cy="12" r="10" />
                             <path d="M12 16v-4M12 8h.01" />
                         </svg>
-                        Tus datos solo se usan para mostrar tu reseña en esta página.
+                        Tus datos solo se usan para mostrar tu comentario en esta página.
                     </p>
                     <button type="submit" class="btn-primary btn-primary--cta review-submit-btn" id="reviewSubmitBtn">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
                         </svg>
-                        Publicar reseña
+                        Publicar comentario
                     </button>
                 </div>
             </form>
             <div class="review-success" id="reviewSuccess" style="display:none">
                 <div class="review-success-icon">🎉</div>
-                <h3>¡Gracias por tu reseña!</h3>
-                <p>Tu opinión ya aparece en nuestra sección de reseñas. ¡La comunidad CELESTE te lo agradece!</p>
-                <button class="btn-outline" onclick="resetReviewForm()">Escribir otra reseña</button>
+                <h3>¡Gracias por tu comentario!</h3>
+                <p>Tu opinión ya aparece en nuestra sección de reseñas. ¡Nos vemos pronto en Oasis Campestre JC!</p>
+                <button class="btn-outline" onclick="resetReviewForm()">Escribir otro comentario</button>
             </div>
         </div>
     </section>
@@ -541,18 +602,18 @@
         </div>
     </div>
 
-    <section class="cta-section">
+    <section class="cta-section" id="contacto">
         <div class="cta-section__bg"></div>
         <div class="cta-section__content reveal">
-            <h2 class="cta-section__title">¿Lista para<br>la <span>ocasión perfecta?</span></h2>
-            <p class="cta-section__sub">Escríbenos y te asesoramos para encontrar el accesorio ideal.<br>Atención
-                personalizada · Lunes a Sábado</p>
-            <a href="https://wa.me/573203259834" target="_blank" class="btn-wa-big">
+            <h2 class="cta-section__title">¿Listo para<br><span>disfrutar un día inolvidable?</span></h2>
+            <p class="cta-section__sub">Reserva ahora tu mesa y vive una experiencia llena de sabor, naturaleza
+                y diversión.<br>Atención todos los días</p>
+            <a href="https://wa.me/573213614370" target="_blank" class="btn-wa-big">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path
                         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
-                Chatear en WhatsApp
+                Reservar por WhatsApp
             </a>
         </div>
     </section>
@@ -560,60 +621,61 @@
     <footer>
         <div class="footer-top">
             <div class="footer-brand">
-                <span class="brand-name">CELES<span>TE</span></span>
-                <p>Accesorios de mujer con estilo y calidad. Cadenas, aretes, pulseras, relojes y más.<br>Con amor desde
-                    Villavicencio para toda Colombia 🇨🇴</p>
+                <span class="brand-name">OASIS<span> JC</span></span>
+                <p>Restaurante y balneario campestre. Comida típica, pescados, carnes a la parrilla y piscinas
+                    para toda la familia.<br>Sabor, sol y diversión en un solo lugar 🌴</p>
                 <div class="footer-social">
-                    <a href="https://wa.me/573203259834" target="_blank" title="WhatsApp">
+                    <a href="https://wa.me/573213614370" target="_blank" title="WhatsApp">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                         </svg>
                     </a>
+                    <a href="#" title="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M22 12a10 10 0 10-11.56 9.87v-6.98H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.98A10 10 0 0022 12z" />
+                        </svg></a>
                     <a href="#" title="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg></a>
-                    <a href="#" title="TikTok"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z" />
-                        </svg></a>
                 </div>
             </div>
             <div class="footer-col">
-                <h4>Colección</h4>
+                <h4>Menú</h4>
                 <ul>
-                    <li><a href="#categorias">Cadenas</a></li>
-                    <li><a href="#categorias">Aretes</a></li>
-                    <li><a href="#categorias">Pulseras</a></li>
-                    <li><a href="#categorias">Relojes</a></li>
-                    <li><a href="#categorias">Anillos</a></li>
-                    <li><a href="#categorias">Conjuntos</a></li>
+                    <li><a href="#especialidades">Carnes a la Parrilla</a></li>
+                    <li><a href="#especialidades">Pescados</a></li>
+                    <li><a href="#especialidades">Pollo</a></li>
+                    <li><a href="#especialidades">Platos Típicos</a></li>
+                    <li><a href="#especialidades">Bebidas</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Información</h4>
+                <h4>Horario</h4>
                 <ul>
-                    <li><a href="https://wa.me/573203259834" target="_blank">Cómo comprar</a></li>
-                    <li><a href="https://wa.me/573203259834" target="_blank">Envíos</a></li>
-                    <li><a href="https://wa.me/573203259834" target="_blank">Garantía</a></li>
-                    <li><a href="https://wa.me/573203259834" target="_blank">Cambios</a></li>
-                    <li><a href="https://wa.me/573203259834" target="_blank">FAQ</a></li>
+                    <li>Lunes a Domingo</li>
+                    <li>9:00 AM – 7:00 PM</li>
+                </ul>
+                <h4 style="margin-top:20px">Ubicación</h4>
+                <ul>
+                    <li>Oasis Campestre JC</li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Contacto</h4>
                 <ul>
-                    <li><a href="https://wa.me/573203259834" target="_blank">WhatsApp</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">TikTok</a></li>
-                    <li><a href="#escribir-resena">Dejar reseña</a></li>
-                    <li><a href="https://wa.me/573203259834" target="_blank">Pedidos</a></li>
+                    <li><a href="https://wa.me/573213614370" target="_blank">WhatsApp</a></li>
+                    <li><a href="tel:+573213614370">Teléfono</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/oasiscampestre_jc?igsh=MWpyeWtvbWZpNmhyNg==">Instagram</a></li>
+                    <li><a href="https://maps.app.goo.gl/fyHCmqzNJYyVpKnK6?g_st=ac" target="_blank">Google Maps</a></li>
+                    <li><a href="#escribir-resena">Dejar comentario</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="footer-copy">© 2026 CELESTE — Villavicencio, Colombia 🇨🇴</div>
+            <div class="footer-copy">© 2026 Oasis Campestre JC — Todos los derechos reservados 🌴</div>
             <div class="footer-cards">
                 <div class="footer-card">Nequi</div>
                 <div class="footer-card">Daviplata</div>
@@ -623,7 +685,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/573203259834" target="_blank" class="wa-float" title="Pedir por WhatsApp">
+    <a href="https://wa.me/573213614370" target="_blank" class="wa-float" title="Reservar por WhatsApp">
         <div class="wa-float-ping"></div>
         <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
             <path
@@ -632,39 +694,27 @@
     </a>
 
     <script>
-        const WA = '573203259834';
-
+        const WA = '573213614370';
 
         const products = [
-            { id: 1, name: 'Zirconia brillante, ajustable', brand: 'Anillos', cat: 'Anillos', price: 16000, badge: 'new', badgeText: '✦ Nuevo', serial: 'anillo02', urgency: '' },
-            { id: 2, name: 'Zirconia brillante, ajustable', brand: 'Anillos', cat: 'Anillos', price: 16000, badge: 'new', badgeText: '✦ Nuevo', serial: 'anillo03', urgency: '' },
-            { id: 3, name: 'Entrelazadobrillante, ajustable', brand: 'Anillos', cat: 'Anillos', price: 16000, badge: 'new', badgeText: '✦ Nuevo', serial: 'anillo04', urgency: '' },
-            { id: 4, name: 'Topo virgen perlada', brand: 'Aretes', cat: 'Aretes', price: 16000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete01', urgency: '' },
-            { id: 5, name: 'Topo cruz verde esmeralda', brand: 'Aretes', cat: 'Aretes', price: 15000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete04', urgency: '¡Últimas unidades!' },
-            { id: 6, name: 'Topo nudo dorado', brand: 'Aretes', cat: 'Aretes', price: 15000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete05', urgency: '¡Últimas unidades!' },
-            { id: 7, name: 'Topo corazón rojo', brand: 'Aretes', cat: 'Aretes', price: 12000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete03', urgency: '¡Últimas unidades!' },
-            { id: 8, name: 'Topo tipo clip', brand: 'Aretes', cat: 'Aretes', price: 13000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete07', urgency: '¡Últimas unidades!' },
-            //{ id: 9, name: 'Topo flor 4 petalos', brand: 'Aretes', cat: 'Aretes', price: 17000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete08', urgency: '¡Últimas unidades!' },
-           // { id: 10, name: 'Candonga virgen', brand: 'Aretes', cat: 'Aretes', price: 15000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete02', urgency: '¡Últimas unidades!' },
-           // { id: 11, name: 'Candonga sofia mediana', brand: 'Aretes', cat: 'Aretes', price: 16000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete06', urgency: '¡Últimas unidades!' },
-            { id: 12, name: 'Candonga refe puntas', brand: 'Aretes', cat: 'Aretes', price: 10000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete09', urgency: '¡Últimas unidades!' },
-            { id: 13, name: 'Candonga cuadrada vital', brand: 'Aretes', cat: 'Aretes', price: 15000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete10', urgency: '¡Últimas unidades!' },
-            { id: 14, name: 'Candonga corazones silueta', brand: 'Aretes', cat: 'Aretes', price: 14000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete11', urgency: '¡Últimas unidades!' },
-            { id: 15, name: 'Candonga lisa clasica mediana', brand: 'Aretes', cat: 'Aretes', price: 12000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete12', urgency: '¡Últimas unidades!' },
-            { id: 16, name: 'Candonga aros mediana', brand: 'Aretes', cat: 'Aretes', price: 12000, badge: 'new', badgeText: '✦ Nuevo', serial: 'arete13', urgency: '¡Últimas unidades!' },
-            { id: 17, name: 'Virgen cuadrada', brand: 'Cadenas', cat: 'Cadenas', price: 17000, badge: 'hot', badgeText: '🔥 Más vendida', serial: 'cadena01', urgency: '¡Últimas unidades!' },
-           // { id: 18, name: 'Virgen redonda', brand: 'Cadenas', cat: 'Cadenas', price: 17000, badge: 'hot', badgeText: '🔥 Más vendida', serial: 'cadena02', urgency: '¡Últimas unidades!' },
-           // { id: 19, name: 'Camandula virgen de guadalupe', brand: 'Cadenas', cat: 'Cadenas', price: 21000, badge: 'hot', badgeText: '🔥 Más vendida', serial: 'cadena06', urgency: '¡Últimas unidades!' },
-            { id: 20, name: 'Cruz mediana verde esmeralda', brand: 'Cadenas', cat: 'Cadenas', price: 18000, badge: 'hot', badgeText: '🔥 Más vendida', serial: 'cadena03', urgency: '¡Últimas unidades!' },
-            { id: 21, name: 'Corazón de perla', brand: 'Cadenas', cat: 'Cadenas', price: 18000, badge: 'hot', badgeText: '🔥 Más vendida', serial: 'cadena04', urgency: '¡Últimas unidades!' },
-            { id: 22, name: 'Gota verde esmeralda', brand: 'Cadenas', cat: 'Cadenas', price: 18000, badge: 'hot', badgeText: '🔥 Más vendida', serial: 'cadena05', urgency: '¡Últimas unidades!' },
-            { id: 23, name: 'Camandula virgen de fatima', brand: 'Cadenas', cat: 'Cadenas', price: 20000, badge: 'hot', badgeText: '🔥 Más vendida', serial: 'cadena06', urgency: '¡Últimas unidades!' },
-            { id: 24, name: 'Conjunto Cadena + Aretes virgen', brand: 'Conjuntos', cat: 'Cadenas', price: 30000, badge: 'hot', badgeText: '🔥 Más vendida', serial: 'combo01', urgency: '¡Últimas unidades!' },
-            { id: 25, name: 'Esferas diamantadas Dorada, graduable', brand: 'Pulseras', cat: 'Pulseras', price: 17000, badge: '', badgeText: '', serial: 'pulsera01', urgency: '' },
-            { id: 26, name: 'Perla con esferas diamantadas, graduable', brand: 'Pulseras', cat: 'Pulseras', price: 14000, badge: 'hot', badgeText: '🔥 Más vendida', serial: 'pulsera02', urgency: '¡Últimas unidades!' },
-           // { id: 11, name: 'Elegance Rose Gold', brand: 'Relojes', cat: 'Relojes', price: 176000, oldPrice: 220000, badge: 'sale', badgeText: '−20%', serial: 'reloj01', urgency: '🔥 Envío gratis hoy' },
-           // { id: 12, name: 'Reloj Minimalista Negro', brand: 'Relojes', cat: 'Relojes', price: 195000, badge: '', badgeText: '', serial: 'reloj02', urgency: '' },
-            
+            { id: 1, name: 'Parrillada Mixta', brand: 'Carnes a la Parrilla', cat: 'Carnes', price: 65000, badge: 'hot', badgeText: '🔥 Más pedida', serial: 'parrillada-mixta', urgency: 'Ideal para compartir', desc: 'Res, cerdo, chorizo y pollo a la brasa con guarniciones.' },
+            { id: 2, name: 'Carne a la Llanera', brand: 'Carnes a la Parrilla', cat: 'Carnes', price: 38000, badge: 'hot', badgeText: '🔥 Más pedida', serial: 'carne-llanera', urgency: '', desc: 'Carne madurada al estilo llanero, asada lentamente.' },
+            { id: 3, name: 'Costillas BBQ', brand: 'Carnes a la Parrilla', cat: 'Carnes', price: 42000, badge: '', badgeText: '', serial: 'costillas-bbq', urgency: '', desc: 'Costillas de cerdo bañadas en salsa BBQ de la casa.' },
+            { id: 4, name: 'Picada Familiar', brand: 'Carnes a la Parrilla', cat: 'Carnes', price: 78000, badge: 'new', badgeText: '✦ Para compartir', serial: 'picada-familiar', urgency: '', desc: 'Selección de carnes, papa criolla, arepa y ensalada.' },
+            { id: 5, name: 'Hamburguesa Oasis', brand: 'Carnes a la Parrilla', cat: 'Carnes', price: 26000, badge: '', badgeText: '', serial: 'hamburguesa-oasis', urgency: '', desc: 'Carne artesanal, queso, tocineta y salsa especial.' },
+            { id: 6, name: 'Mojarra Frita', brand: 'Pescados', cat: 'Pescados', price: 32000, badge: 'hot', badgeText: '🔥 Más pedida', serial: 'mojarra-frita', urgency: '', desc: 'Mojarra fresca frita, servida con patacón y ensalada.' },
+            { id: 7, name: 'Ceviche', brand: 'Pescados', cat: 'Pescados', price: 28000, badge: 'new', badgeText: '✦ Nuevo', serial: 'ceviche', urgency: '', desc: 'Ceviche fresco de camarón y pescado, cítrico y ligero.' },
+            { id: 8, name: 'Filete de Pescado a la Plancha', brand: 'Pescados', cat: 'Pescados', price: 34000, badge: '', badgeText: '', serial: 'filete-plancha', urgency: '', desc: 'Filete jugoso a la plancha con vegetales salteados.' },
+            { id: 9, name: 'Pollo Asado', brand: 'Pollo', cat: 'Pollo', price: 24000, badge: '', badgeText: '', serial: 'pollo-asado', urgency: '', desc: 'Pollo asado al carbón, jugoso y bien sazonado.' },
+            { id: 10, name: 'Alitas BBQ', brand: 'Pollo', cat: 'Pollo', price: 22000, badge: '', badgeText: '', serial: 'alitas-bbq', urgency: '', desc: 'Alitas crocantes bañadas en salsa BBQ o picante.' },
+            { id: 11, name: 'Pechuga a la Plancha', brand: 'Pollo', cat: 'Pollo', price: 23000, badge: '', badgeText: '', serial: 'pechuga-plancha', urgency: '', desc: 'Pechuga de pollo a la plancha con guarniciones frescas.' },
+            { id: 12, name: 'Bandeja Paisa', brand: 'Platos Típicos', cat: 'Típicos', price: 30000, badge: 'hot', badgeText: '🔥 Más pedida', serial: 'bandeja-paisa', urgency: '', desc: 'Frijoles, arroz, carne, chicharrón, huevo, arepa y más.' },
+            { id: 13, name: 'Sancocho', brand: 'Platos Típicos', cat: 'Típicos', price: 26000, badge: 'hot', badgeText: '🔥 Más pedida', serial: 'sancocho', urgency: '', desc: 'Sancocho campesino con gallina, plátano y yuca.' },
+            { id: 14, name: 'Mamona', brand: 'Platos Típicos', cat: 'Típicos', price: 36000, badge: 'new', badgeText: '✦ Especialidad', serial: 'mamona', urgency: '', desc: 'Carne llanera asada al asador tradicional.' },
+            { id: 15, name: 'Limonada de Coco', brand: 'Bebidas', cat: 'Bebidas', price: 12000, badge: '', badgeText: '', serial: 'limonada-coco', urgency: '', desc: 'Refrescante limonada cremosa de coco.' },
+            { id: 16, name: 'Jugos Naturales', brand: 'Bebidas', cat: 'Bebidas', price: 8000, badge: '', badgeText: '', serial: 'jugos-naturales', urgency: '', desc: 'En agua o leche, fruta fresca de la región.' },
+            { id: 17, name: 'Cócteles Tropicales', brand: 'Bebidas', cat: 'Bebidas', price: 16000, badge: 'new', badgeText: '✦ Nuevo', serial: 'cocteles-tropicales', urgency: '', desc: 'Mojito, piña colada o daiquiri, a tu elección.' },
+            { id: 18, name: 'Cerveza Nacional', brand: 'Bebidas', cat: 'Bebidas', price: 7000, badge: '', badgeText: '', serial: 'cerveza-nacional', urgency: '', desc: 'Bien fría, ideal para acompañar tu comida.' },
         ];
 
         let currentFilter = 'Todos';
@@ -672,13 +722,13 @@
 
         function fmtPrice(n) { return '$' + n.toLocaleString('es-CO'); }
         function catEmoji(cat) {
-            return { Cadenas: '📿', Aretes: '💎', Relojes: '⌚', Pulseras: '✨', Anillos: '💍', Conjuntos: '✨' }[cat] || '💎';
+            return { Carnes: '🍖', Pescados: '🐟', Pollo: '🍗', 'Típicos': '🍛', Bebidas: '🥤' }[cat] || '🍽️';
         }
 
         function updateCatCounts() {
-            ['Cadenas', 'Aretes', 'Relojes', 'Pulseras', 'Anillos'].forEach(cat => {
+            ['Carnes', 'Pescados', 'Pollo', 'Típicos', 'Bebidas'].forEach(cat => {
                 const el = document.getElementById('count-' + cat);
-                if (el) { const c = products.filter(p => p.cat === cat).length; el.textContent = c + ' producto' + (c !== 1 ? 's' : ''); }
+                if (el) { const c = products.filter(p => p.cat === cat).length; el.textContent = c + ' plato' + (c !== 1 ? 's' : ''); }
             });
         }
 
@@ -688,7 +738,7 @@
             grid.innerHTML = filtered.map(p => `
         <div class="prod-card reveal" data-id="${p.id}">
             <div class="prod-card__img-wrap">
-                <img src="img/${p.serial}.jpeg" alt="${p.name}" class="prod-card__img"
+                <img src="img/${p.serial}.jpg" alt="${p.name}" class="prod-card__img"
                      onerror="this.style.display='none';this.parentElement.querySelector('.prod-fallback').style.display='flex'">
                 <div class="prod-fallback" style="display:none">${catEmoji(p.cat)}</div>
                 ${p.badge ? `<span class="prod-card__badge badge-${p.badge}">${p.badgeText}</span>` : ''}
@@ -700,15 +750,14 @@
             </div>
             <div class="prod-card__brand">${p.brand}</div>
             <div class="prod-card__name">${p.name}</div>
+            <div class="prod-card__desc">${p.desc}</div>
             <div class="prod-card__footer">
-                <div class="prod-card__price">
-                    ${p.oldPrice ? `<s>${fmtPrice(p.oldPrice)}</s> ` : ''}${fmtPrice(p.price)}
-                </div>
+                <div class="prod-card__price">${fmtPrice(p.price)}</div>
                 <button class="prod-card__wishlist" onclick="addToCart(${p.id})" title="Agregar al pedido">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
                 </button>
             </div>
-            <a href="https://wa.me/${WA}?text=${encodeURIComponent('Hola CELESTE 👋 me interesa: ' + p.name + ' (' + fmtPrice(p.price) + '). ¿Está disponible?')}" target="_blank" class="prod-wa-link">
+            <a href="https://wa.me/${WA}?text=${encodeURIComponent('¡Hola Oasis Campestre JC! 👋 me interesa: ' + p.name + ' (' + fmtPrice(p.price) + '). ¿Está disponible?')}" target="_blank" class="prod-wa-link">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 Consultar por WhatsApp
             </a>
@@ -726,7 +775,7 @@
                 if (target) target.classList.add('active');
             }
             renderProducts(cat);
-            document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
         }
 
         function addToCart(id) {
@@ -735,7 +784,7 @@
             if (cart[id]) cart[id].qty++;
             else cart[id] = { ...p, qty: 1 };
             updateCartUI();
-            showToast('✓ ' + p.name + ' agregado');
+            showToast('✓ ' + p.name + ' agregado al pedido');
         }
         function removeFromCart(id) { delete cart[id]; updateCartUI(); renderCartItems(); }
         function changeQty(id, delta) {
@@ -764,7 +813,7 @@
             el.innerHTML = Object.values(cart).map(i => `
         <div class="cart-item">
             <div class="cart-item-icon">
-                <img src="img/${i.serial}.jpeg" alt="${i.name}" onerror="this.style.display='none';this.parentElement.insertAdjacentText('beforeend','${catEmoji(i.cat)}')">
+                <img src="img/${i.serial}.jpg" alt="${i.name}" onerror="this.style.display='none';this.parentElement.insertAdjacentText('beforeend','${catEmoji(i.cat)}')">
             </div>
             <div class="cart-item-info">
                 <div class="cart-item-brand">${i.brand}</div>
@@ -798,9 +847,9 @@
             const note = document.getElementById('cartNote').value.trim();
             const lines = items.map(i => `• ${i.qty}x ${i.name} — ${fmtPrice(i.price * i.qty)}`);
             const total = items.reduce((s, i) => s + i.price * i.qty, 0);
-            let msg = `¡Hola CELESTE! 👋 Quiero hacer el siguiente pedido:\n\n${lines.join('\n')}\n\n*Total estimado: ${fmtPrice(total)}*`;
-            if (note) msg += `\n\n📝 Nota: ${note}`;
-            msg += '\n\n¿Me confirmas disponibilidad y envío? 🙏';
+            let msg = `¡Hola Oasis Campestre JC! 👋 Quiero hacer el siguiente pedido:\n\n${lines.join('\n')}\n\n*Total del pedido: ${fmtPrice(total)}*`;
+            if (note) msg += `\n\n📝 Observaciones: ${note}`;
+            msg += '\n\n¿Me confirmas disponibilidad? 🙏';
             window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
@@ -813,7 +862,11 @@
             toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
         }
 
-        window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', scrollY > 40));
+        window.addEventListener('scroll', () => {
+            document.getElementById('nav').classList.toggle('scrolled', scrollY > 40);
+            const heroImg = document.querySelector('.hero-img-placeholder');
+            if (heroImg && scrollY < 900) heroImg.style.transform = `translateY(${scrollY * 0.08}px)`;
+        });
         const ham = document.getElementById('hamburger'), mob = document.getElementById('mobileMenu');
         ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open'); });
         function closeMobileMenu() { ham.classList.remove('open'); mob.classList.remove('open'); }
@@ -823,14 +876,14 @@
         }), { threshold: .08 });
         document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-        const REVIEWS_KEY = 'celeste_reviews';
+        const REVIEWS_KEY = 'oasis_reviews';
         const REVIEWS_PER_PAGE = 6;
         let reviewsPage = 1;
 
         const SEED_REVIEWS = [
-            { name: 'Valentina G.', city: 'Bogotá', rating: 5, text: 'La cadena fígaro es hermosa, la calidad es increíble para el precio. Ya pedí los aretes a juego.', product: 'Cadena Fígaro Dorada 18K', date: '2026-03-10' },
-            { name: 'Daniela M.', city: 'Medellín', rating: 5, text: 'El reloj llegó en una caja preciosa, fue un regalo para mi mamá y quedó enamorada. Servicio 10/10.', product: 'Reloj Elegance Rose Gold', date: '2026-02-28' },
-            { name: 'Sofía R.', city: 'Villavicencio', rating: 5, text: 'Las pulseras son exactamente como en las fotos, muy finas y elegantes. Envío rapidísimo.', product: 'Pulsera Bangle Dorada', date: '2026-02-14' },
+            { name: 'Marcela T.', city: 'Villavicencio', rating: 5, text: 'La comida estaba deliciosa y las piscinas muy limpias.', product: 'Parrillada Mixta', date: '2026-03-10' },
+            { name: 'Jorge L.', city: 'Bogotá', rating: 5, text: 'Excelente atención y un lugar perfecto para pasar el fin de semana.', product: 'Bandeja Paisa', date: '2026-02-28' },
+            { name: 'Carolina P.', city: 'Villavicencio', rating: 5, text: 'Los pescados son espectaculares.', product: 'Mojarra Frita', date: '2026-02-14' },
         ];
 
         function getStoredReviews() { try { return JSON.parse(localStorage.getItem(REVIEWS_KEY) || '[]'); } catch { return []; } }
@@ -866,7 +919,7 @@
             const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
             const initial = r.name.charAt(0).toUpperCase();
             const dateStr = r.date ? new Date(r.date).toLocaleDateString('es-CO', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
-            return `<div class="testi-card reveal"><div class="testi-stars">${stars}</div><div class="testi-text">"${r.text}"</div>${r.product ? `<div class="review-product-tag">🛍️ ${r.product}</div>` : ''}<div class="testi-footer"><div class="testi-avatar">${initial}</div><div class="testi-author-info"><div class="testi-author">${r.name}</div>${r.city ? `<div class="testi-location">📍 ${r.city}</div>` : ''}</div>${dateStr ? `<div class="review-date">${dateStr}</div>` : ''}</div></div>`;
+            return `<div class="testi-card reveal"><div class="testi-stars">${stars}</div><div class="testi-text">"${r.text}"</div>${r.product ? `<div class="review-product-tag">🍽️ ${r.product}</div>` : ''}<div class="testi-footer"><div class="testi-avatar">${initial}</div><div class="testi-author-info"><div class="testi-author">${r.name}</div>${r.city ? `<div class="testi-location">📍 ${r.city}</div>` : ''}</div>${dateStr ? `<div class="review-date">${dateStr}</div>` : ''}</div></div>`;
         }
 
         function showMoreReviews() { reviewsPage++; renderUserReviews(); }
@@ -918,7 +971,7 @@
             document.getElementById('reviewSuccess').style.display = 'block';
             renderUserReviews();
             updateRatingSummary();
-            showToast('🎉 ¡Reseña publicada! Gracias ' + name);
+            showToast('🎉 ¡Gracias ' + name + '!');
         }
 
         function resetReviewForm() {
